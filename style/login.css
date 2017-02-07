@@ -1,0 +1,366 @@
+body{
+	background-color: #1E3E57;
+}
+
+#root_container{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #1E3E57;
+	overflow-x: hidden;
+}
+
+#content_wrapper{
+	width: 600px;
+	height: auto;
+	padding-bottom: 10px;
+	/* centers input container only, instead of input and header */
+	margin: 0 auto;
+	transition: 0.2s;
+}
+
+#header_container{
+	width: 100%;
+	height: 80px;
+	background: #1E3E57;
+	margin-bottom: 10px;
+	padding: 10px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.header_content{
+	float: left;
+	background: #1E3E57;
+	padding: 20px;
+	font-family: FiraSans-Regular;
+	font-size: 30px;
+	margin-right: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #1E3E57;
+	color: #fff;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.header_content:hover{
+	background-color: #fff;
+	color: #1E3E57;
+	border-color: #fff;
+}
+
+.header_content.active{
+	border-color: #fff;
+}
+
+.form_container{
+	width: 100%;
+	height: 0px;
+	padding-bottom: 20px;
+	background-color: #fff;
+	transition: .2s;
+}
+
+/* NOTE: These are *exact* heights, they will need to be changed
+         for repsonsive design, or modified somehow */
+.form_container.register{
+	height: 430px;
+}
+
+.form_container.login{
+	height: 200px;
+}
+
+.input_container{
+	width: 560px;
+	height: auto;
+	margin-bottom: 10px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #fff;
+	visibility: visible;
+	transition: 0.5s;
+	margin-left: 20px;
+	display: inline-block;
+}
+
+.input_container.smaller{
+	width: calc(100% - 40px);
+}
+
+.input_container.error{
+	border-bottom-color: #C23A2E;
+}
+
+.input_container.register.hidden{
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.input_container.login.hidden{
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#login_inputs{
+	width: 600px;
+	height: auto;;
+	position: absolute;
+	background-color: #fff;
+	z-index: 5;
+	transition: 0.5s;
+}
+
+#register_inputs{
+	width: 600px;
+	height: auto;
+	position: absolute;
+	background: #fff;
+	z-index: 8;
+	transition: 0.5s;
+}
+
+#register_inputs.hidden{
+	margin-left: 600px;
+}
+
+#register_inputs_cloak{
+	width: 600px;
+	height: 100%;
+	position: absolute;
+	background-color: #1E3E57;
+	z-index: 10;
+	transition: 0.5s;
+	margin-right: -600px;
+}
+
+#register_inputs_cloak.move{
+	margin-left: 600px;
+}
+
+#login_inputs_cloak{
+	width: 600px;
+	height: 100%;
+	position: absolute;
+	background-color: #1E3E57;
+	z-index: 6;
+	transition: 0.5s;
+	/* -600px left as 600px right wasnt working */
+	margin-left: -600px;
+}
+
+#login_inputs_cloak.move{
+	margin-left: 0;
+}
+
+#login_inputs.hidden{
+	margin-left: -600px;
+}
+
+.input_container.top{
+	margin-top: 15px;
+}
+
+.input_field{
+	width: calc(100% - 20px);
+	height: 46px;
+	padding: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	outline: none;
+	border: none;
+	background-color: #ECF0F1;
+	font-family: FiraSans-Regular;
+	font-size: 15px;
+	color: #000;
+	float: left;
+	transition: .2s;
+}
+
+.input_field:invalid{
+	background-color: none;
+	border: none;
+	box-shadow: none;
+}
+
+.input_field.error{
+	width: calc(100% - 70px);
+	background-color: #DB544C;
+}
+
+#email_field.error{
+	width: calc(100% - 70px);
+	background-color: #DB544C;
+}
+
+.input_field.register.hidden{
+	width: 0;
+	height: 0;
+	padding: 0;
+}
+
+.input_field.login.hidden{
+	width: 0;
+	height: 0;
+	padding: 0;
+}
+
+.error_icon{
+	width: 50px;
+	height: 50px;
+	background-color: #C23A2E;
+	float: left;
+	font-family: FiraSans-Regular;
+	font-size: 18px;
+	color: #fff;
+	transition: .2s;
+	cursor: pointer;
+}
+
+.error_icon.hidden{
+	width: 0;
+	font-size: 0;
+}
+
+.submit_button{
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	background-color: #0192EE;
+	color: #fff;
+	transition: .2s background-color;
+}
+
+.submit_button:hover{
+	background-color: #5FB3F9;
+	cursor: pointer;
+}
+
+#login_password_field{
+	width: calc(100% - 115px);
+}
+
+#login_password_field.error{
+	width: calc(100% - 165px);
+}
+
+.register.pass_field{
+	width: calc(100% - 75px);
+}
+
+.register.pass_field.error{
+	width: calc(100% - 125px);
+}
+
+.show_pass_button{
+	width: 45px;
+	height: 50px;
+	background: #ECF0F1;
+	float: left;
+	font-family: FiraSans-Regular;
+	font-size: 16px;
+	color: #928589;
+	transition: .2s;
+}
+
+.show_pass_button.reg{
+	padding-right: 10px;
+}
+
+.show_pass_button:hover{
+	color: #000;
+	cursor: pointer;
+}
+
+.show_pass_button.hidden{
+	width: 0;
+	height: 0;
+	font-size: 0;
+}
+
+.show_pass_button.error{
+	background-color: #DB544C;
+	color: #C23A2E;
+}
+
+#forgot_pass_icon{
+	width: 50px;
+	height: 50px;
+	background-color: #ECF0F1;
+	float: left;
+	transition: 0.2;
+	cursor: pointer;
+	transition: .2s;
+}
+
+#forgot_pass_icon.hidden{
+	width: 0;
+	height: 0;
+}
+
+#forgot_pass_icon.error{
+	background-color: #DB544C;
+}
+
+#forgot_pass_icon.hidden #forgot_pass_icon_circle{
+	width: 0;
+	height: 0;
+	font-size: 0;
+}
+
+#forgot_pass_icon_circle{
+	width: 25px;
+	height: 25px;
+	background-color: #928589;
+	font-family: FiraSans-Regular;
+	font-size: 16px;
+	color: #ECF0F1;
+	transition: 0.2;
+	border-radius: 100%;
+	transition: .2s;
+}
+
+#forgot_pass_icon_circle.error{
+	background-color: #C23A2E;
+	color: #DB544C;
+}
+
+#forgot_pass_icon:hover #forgot_pass_icon_circle{
+	background-color: #000;
+	cursor: pointer;
+}
+
+#password_req{
+	width: 520px;
+	max-height: 1000px;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #000;
+	clear: both;
+	font-size: 15px;
+	transition: 0.2s;
+	margin-bottom: 5px;
+	color: #fff;
+	transition: 0.2s;
+}
+
+#password_req.error{
+	background-color: #C23A2E;
+}
+
+#password_req.hidden{
+	max-height: 0;
+	font-size: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#password_req_txt{
+	font-family: FiraSans-Regular;
+}
