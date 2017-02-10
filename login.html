@@ -30,7 +30,7 @@
                             </div>
                             <div class="input_container login password">
                                 <div class="error_icon hidden flex_container login password" title="Password Required">!</div>
-                                <input type="password" id="login_password_field" class="input_field login" name="login_password" placeholder="Password" title="Password">
+                                <input type="password" id="login_password_field" pattern=//g class="input_field login" name="login_password" placeholder="Password" title="Password">
                                 <div id="login_show_pass_button" class="flex_container show_pass_button">show</div>
                                 <a href="forgot_password.html" target="_blank">
                                     <div id="forgot_pass_icon" class="flex_container" title="Forgot Password">
@@ -60,9 +60,6 @@
                                 <div class="error_icon hidden reg password flex_container" title="Invalid Password">!</div>
                                 <input id="reg_pass_field" type="password" class="pass_field input_field register" name="reg_pass" placeholder="Password" title="Password">
                                 <div id="reg_show_pass_button" class="flex_container show_pass_button reg">show</div>
-                                <div id="password_req">
-                                    <p id="password_req_txt">Password must be at least 8 characters longs, and contain at least one: lower and upper case, symbol and number, and contain no spaces</p>
-                                </div>
                             </div>
                             <div class="input_container register">
                                 <div class="error_icon hidden reg password_repeat flex_container" title="Passwords Don't Match">!</div>

@@ -83,6 +83,7 @@ body{
 	transition: 0.5s;
 	margin-left: 20px;
 	display: inline-block;
+	transition: 0.2s;
 }
 
 .input_container.smaller{
@@ -333,34 +334,4 @@ body{
 #forgot_pass_icon:hover #forgot_pass_icon_circle{
 	background-color: #000;
 	cursor: pointer;
-}
-
-#password_req{
-	width: 520px;
-	max-height: 1000px;
-	padding: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	background-color: #000;
-	clear: both;
-	font-size: 15px;
-	transition: 0.2s;
-	margin-bottom: 5px;
-	color: #fff;
-	transition: 0.2s;
-}
-
-#password_req.error{
-	background-color: #C23A2E;
-}
-
-#password_req.hidden{
-	max-height: 0;
-	font-size: 0;
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
-#password_req_txt{
-	font-family: FiraSans-Regular;
 }
