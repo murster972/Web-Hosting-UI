@@ -2,7 +2,9 @@ $(document).ready(function(){
     //clears inputs on page load
     //email_validation("test@[123.255.123.123]")
     //email_validation("test@[123.12e3.123.123]")
-    //email_validation("test@[IPv6:2001:db8::1]")
+    //valid_ip("2001:db8::ff00:42:8329");
+
+    $("input[type=text]").val("f");
 
     //testing error message transition
     $(document).click(function(){
@@ -66,12 +68,12 @@ function form_change(form){
 
 /* toggles password show */
 function show_pass(id){
-    field_id = id.replace("_show", "").replace("_button", "_field")
+    field_id = "#" + id.replace("_show", "").replace("_button", "_field")
     var type = $(field_id).prop("type");
         attr = type == "password" ? "text" : "password";
         txt = type == "password" ? "hide" : "show";
     $(field_id).attr("type", attr);
-    $(id).text(txt);
+    $("#" + id).text(txt);
 }
 
 function login_form_submit(){
@@ -150,6 +152,11 @@ function email_validation(email){
     if(start_end != null || two_consec != null) return false;
 
     //domain
+    //checks if "[]", indicating ip addr has been used
+    if(email_addr[1].match(/(?=^.*\[)(?=.*\]$).*/g) != null){
+        return valid_ip(email_addr[1]) ? true : false
+    }
+
     var is_ip = valid_ip(email_addr[1]);
     if(is_ip == true) return true;
     var domain = email_addr[1].split(".");
@@ -159,29 +166,34 @@ function email_validation(email){
     reg_expr = /[a-z]|[A-Z]|[0-9]|[\-]/g;
     if(domain[0].match(reg_expr).length != domain[0].length || domain[1].match(reg_expr).length != domain[1].length) return false;
 
-    //checks if domain starts with a hyphen
+    //checks if domain starts or ends with a hyphen
     reg_expr = /^[\-]|[\-]$/g;
     if(domain[0].match(reg_expr) != null || domain[1].match(reg_expr) != null) return false;
 
     return true;
 }
 
+/* checks IPv4 or IPv6 address is a valid format */
 function valid_ip(ip){
     //checks if square-brackets
-    if(ip.match(/^[\[]|[\]]$/g) == null) return false;
+    //if(ip.match(/^[\[]|[\]]$/g) == null) return false;
 
     var ip_addr = ip.replace("[", "").replace("]", "");
 
     if(ip_addr.match(/[\:]/g) != null){
         //IPv6
         //checks only certain chars were used: a-f A-F 0-9
-        ip_addr = ip_addr.replace(/^[Ii][Pp][Vv][6][\:]/g, "").split(":");
-        for(var i = 0; i < ip_addr.length; i++){
-            //if(ip_addr.match(/[^a-fA-F0-9]/g)) return false;
+        ip_addr = ip_addr.replace(/^[Ii][Pp][Vv][6][\:]/g, "");
+        check_chars = ip_addr.split(":");
+        for(var i = 0; i < check_chars.length; i++){
+            if(check_chars[i].length == 0) continue;
+            if(check_chars[i].match(/[a-f]|[A-F]|[0-9]/g).length != check_chars[i].length) return false;
         }
 
-        //expand '::'
+        //check only one expansion - "::" - has been used and that format is correct
+        if(ip_addr.match(/::{1,}/g) > 2 || ip_addr.match(/::{2,}/g) != null) return false;
 
+        return true;
     }
     else{
         //IPv4e
@@ -197,7 +209,6 @@ function valid_ip(ip){
             if(ip_addr[i].length == 0) return false;
         }
 
-        console.log("Valid IPv4 address")
         return true;
     }
 }
