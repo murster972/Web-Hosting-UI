@@ -7,38 +7,45 @@
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/mobile.css">
         <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#content_container").hover(function(){
-                    $(".form_container.login").addClass("hidden");
-                    $(".form_container.register").removeClass("hidden");
-                })
-            })
-        </script>
+        <script type="text/javascript" src="scripts/main.js"></script>
     </head>
     <body>
          <div id="containers_wrapper"> 
             <div id="content_container">
                 <div class="side_shields left"></div>
                 <div class="side_shields right"></div>
-                <div id="button_container"></div>
+                <div id="button_container">
+                    <div class="button login">
+                        <div class="button_text">Login</div>
+                    </div>
+                    <div class="button register">
+                        <div class="button_text">Register</div>
+                    </div>
+                </div>
                 <div class="form_container login">
                     <div class="input_container">
                         <div class="email input">
                             <input class="input_field" type="email" placeholder="Email Address" title="Email Address">
                         </div>
-                        <div class="email forgot"></div>
+                        <div class="email forgot">
+                            <div class="forgot_icon">?</div>
+                        </div>
                     </div>
                     <div class="input_container">
-                        <div class="pass input"></div>
-                        <div class="pass show"></div>
-                        <div class="pass forgot"></div>
+                        <div class="pass input">
+                            <input id="pass_input" class="input_field" type="password" placeholder="Password" title="Password">
+                        </div>
+                        <div class="pass show">
+                            <img id="show_icon" src="images/hide_icon.png"/>
+                        </div>
+                        <div class="pass forgot">
+                            <div class="forgot_icon">?</div>
+                        </div>
                     </div>
                     <div class="input_container end"></div>
                 </div>
                 <div class="form_container register hidden"></div>
             </div>
-            <!-- <div class="side_shields right"></div> -->
         </div>
     </body>
 </html>

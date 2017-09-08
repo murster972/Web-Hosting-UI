@@ -11,7 +11,7 @@
 #containers_wrapper{
     width: 100%;
     height: 100%;
-    background: #4f83c3;
+    background: #0c77c9;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 #content_container{
-    width: 800px;
+    width: 700px;
     height: 100%;
     background: ;
 }
@@ -28,23 +28,44 @@
     width: inherit;
     height: 100%;
     position: absolute;
-    background: #4f83c3;
+    background: #0c77c9;
     z-index: 10;
 }
 
 .side_shields.left{
-    margin-left: -800px;
+    margin-left: -700px;
 }
 
 .side_shields.right{
-    margin-left: 800px;
+    margin-left: 700px;
 }
 
 #button_container{
     width: inherit;
-    height: 200px;
-    background: blue;
+    height: auto;
     margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.button{
+    width: calc(50% - 10px);
+    height: 100px;
+    background: #2b89e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button.register{
+    margin-left: 20px;
+}
+
+.button_text{
+    font-family: FiraSans-Regular;
+    font-size: 30px;
+    color: #fff;
 }
 
 .form_container{
@@ -63,7 +84,7 @@
 }
 
 .form_container.login.hidden{
-    margin-left: -800px;
+    margin-left: -720px;
 }
 
 .form_container.register{
@@ -72,11 +93,11 @@
 }
 
 .form_container.register.hidden{
-    margin-left: 800px;
+    margin-left: 720px;
 }
 
 .input_container{
-    width: 770px;
+    width: 670px;
     height: 50px;
     background: red;
     margin-bottom: 15px;
@@ -107,12 +128,19 @@
 }
 
 .email.input{
-    width: 90%;
+    width: calc(100% - 55px);
 }
 
 .email.forgot{
-    width: 10%;
-    background: green;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#d7d7d7;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    cursor: pointer;
 }
 
 .pass{
@@ -121,15 +149,50 @@
 }
 
 .pass.input{
-    width: 70%;
+    width: calc(100% - 55px - 55px);
 }
 
 .pass.show{
-    width: 20%;
-    background: yellow;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#d7d7d7;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    cursor: pointer;
 }
 
 .pass.forgot{
-    width: 10%;
-    background: green;
+    width: 40px;
+    background: #d7d7d7;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 5px;
+}
+
+.forgot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot_icon{
+    width: 30px;
+    height: 30px;
+    background: #959c9e;
+    color: #d7d7d7;
+    font-family: FiraSans-Regular;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+#show_icon{
+    width: 35px;
+    height: 23px;
 }
