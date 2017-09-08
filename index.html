@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login or Sign-up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/mobile.css">
+        <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#content_container").hover(function(){
+                    $(".form_container.login").addClass("hidden");
+                    $(".form_container.register").removeClass("hidden");
+                })
+            })
+        </script>
+    </head>
+    <body>
+         <div id="containers_wrapper"> 
+            <div id="content_container">
+                <div class="side_shields left"></div>
+                <div class="side_shields right"></div>
+                <div id="button_container"></div>
+                <div class="form_container login">
+                    <div class="input_container">
+                        <div class="email input">
+                            <input class="input_field" type="email" placeholder="Email Address" title="Email Address">
+                        </div>
+                        <div class="email forgot"></div>
+                    </div>
+                    <div class="input_container">
+                        <div class="pass input"></div>
+                        <div class="pass show"></div>
+                        <div class="pass forgot"></div>
+                    </div>
+                    <div class="input_container end"></div>
+                </div>
+                <div class="form_container register hidden"></div>
+            </div>
+            <!-- <div class="side_shields right"></div> -->
+        </div>
+    </body>
+</html>
