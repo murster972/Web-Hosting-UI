@@ -10,8 +10,8 @@
 }
 
 @font-face{
-	font-family: NexaRust-Black;
-    src: url("nexarust/NexaRustSans-Black.otf");
+	font-family: NexaRust-one;
+    src: url("nexa-rust.script-l-0.otf");
 }
 
 *{
@@ -73,16 +73,11 @@
     margin-left: -550px;
 }
 
-.form_container.register{
-    height: 200px;
-    background: red;
-}
-
 .form_container.register.hidden{
     margin-left: 550px;
 }
 
-#login_title{
+.title{
     width: calc(100% - 30px);
     height: auto;
     background: ;
@@ -95,10 +90,17 @@
     color: #fff;
 }
 
+.title.register{
+    /* stand in font till nexarust stops being a fucking cunt! */
+    font-family: NexaRust-One;
+    font-size: 80px;
+    margin-bottom: 0;
+}
+
 .input_container{
     width: 520px;
     height: 50px;
-    background: red;
+    background: blue;
     margin-bottom: 15px;
     display: flex;
     flex-direction: row;
@@ -222,14 +224,6 @@
     color: #fff;
 }
 
-#divider{
-    width: auto;
-    font-family: NexaRust-Black;
-    font-size: 30px;
-    color: #000;
-    margin-bottom: 15px;
-}
-
 #register_butn{
     display: flex;
     justify-content: center;
@@ -247,4 +241,16 @@
 #register_butn:hover{
     background: #fff;
     color: #0c77c9;
+}
+
+#login_return{
+    width: calc(100% - 30px);
+    height: auto;
+    background: ;
+    margin-bottom: 15px;;
+    font-family: FiraSans-Regular;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

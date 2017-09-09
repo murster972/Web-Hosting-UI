@@ -15,4 +15,9 @@ $(document).ready(function(){
         $("#show_icon").attr("src", "images/" + src);
         hidden = hidden ? 0 : 1;
     })
+
+    $("#register_butn").click(function(){
+        $(".form_container.login").addClass("hidden");
+        $(".form_container.register").removeClass("hidden");
+    })
 })
