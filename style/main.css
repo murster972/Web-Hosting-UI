@@ -3,6 +3,17 @@
 	src: url("fonts/FiraSans-Regular.ttf");
 }
 
+@font-face{
+	font-family: NexaRust;
+    src: url("nexarust/NexaRustScriptL-0.otf");
+    /* src: url("nexarust/NexaRustSlab-BlackShadow01.otf") */
+}
+
+@font-face{
+	font-family: NexaRust-Black;
+    src: url("nexarust/NexaRustSans-Black.otf");
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -15,13 +26,15 @@
     position: absolute;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #content_container{
-    width: 700px;
+    width: 550px;
     height: 100%;
     background: ;
+    display: flex;
+    align-items: center;
 }
 
 .side_shields{
@@ -33,39 +46,11 @@
 }
 
 .side_shields.left{
-    margin-left: -700px;
+    margin-left: -550px;
 }
 
 .side_shields.right{
-    margin-left: 700px;
-}
-
-#button_container{
-    width: inherit;
-    height: auto;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-}
-
-.button{
-    width: calc(50% - 10px);
-    height: 100px;
-    background: #2b89e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button.register{
-    margin-left: 20px;
-}
-
-.button_text{
-    font-family: FiraSans-Regular;
-    font-size: 30px;
-    color: #fff;
+    margin-left: 550px;
 }
 
 .form_container{
@@ -75,7 +60,8 @@
     padding: 15px;
     padding-left: 0;
     padding-right: 0;
-    background: #fff;
+    /* background: #fff; */
+    background: #0c77c9;
     transition: .5s;
     display: flex;
     flex-direction: column;
@@ -84,7 +70,7 @@
 }
 
 .form_container.login.hidden{
-    margin-left: -720px;
+    margin-left: -550px;
 }
 
 .form_container.register{
@@ -93,11 +79,24 @@
 }
 
 .form_container.register.hidden{
-    margin-left: 720px;
+    margin-left: 550px;
+}
+
+#login_title{
+    width: calc(100% - 30px);
+    height: auto;
+    background: ;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: NexaRust;
+    font-size: 80px;
+    color: #fff;
 }
 
 .input_container{
-    width: 670px;
+    width: 520px;
     height: 50px;
     background: red;
     margin-bottom: 15px;
@@ -119,7 +118,12 @@
     padding: 10px;
     padding-top: 0;
     padding-bottom: 0;
-    background: #d7d7d7;
+    /* background: #d7d7d7; */
+    background: #fff;
+}
+
+.input_field::placeholder{
+    color: #000;
 }
 
 .email{
@@ -128,7 +132,9 @@
 }
 
 .email.input{
-    width: calc(100% - 55px);
+    width: calc(100% - 55px );
+    display: flex;
+    flex-direction: row;
 }
 
 .email.forgot{
@@ -136,7 +142,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#d7d7d7;
+    /* background-color:#d7d7d7; */
+    background: #fff;
     padding: 10px;
     padding-bottom: 0;
     padding-top: 0;
@@ -157,7 +164,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#d7d7d7;
+    /* background-color:#d7d7d7; */
+    background: #fff;
     padding: 10px;
     padding-bottom: 0;
     padding-top: 0;
@@ -166,7 +174,8 @@
 
 .pass.forgot{
     width: 40px;
-    background: #d7d7d7;
+    /* background: #d7d7d7; */
+    background: #fff;
     padding: 10px;
     padding-bottom: 0px;
     padding-top: 0px;
@@ -182,17 +191,60 @@
 .forgot_icon{
     width: 30px;
     height: 30px;
-    background: #959c9e;
-    color: #d7d7d7;
+    /* background: #959c9e;
+    color: #d7d7d7; */
+    background: #000;
+    color: #fff;
     font-family: FiraSans-Regular;
     font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
+    cursor: pointer;
 }
 
 #show_icon{
     width: 35px;
     height: 23px;
+}
+
+#login_butn{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login_butn_text{
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    color: #fff;
+}
+
+#divider{
+    width: auto;
+    font-family: NexaRust-Black;
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+#register_butn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    color: #fff;
+    background: #0c77c9;
+    border: 2px solid #fff;
+    border-radius: 100px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+#register_butn:hover{
+    background: #fff;
+    color: #0c77c9;
 }
