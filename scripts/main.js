@@ -25,4 +25,9 @@ $(document).ready(function(){
         $(".form_container.login").removeClass("hidden");
         $(".form_container.register").addClass("hidden");
     });
+
+
+    $("#login_butn").click(function(){
+        $("#error_container").removeClass("hidden");
+    })
 })
