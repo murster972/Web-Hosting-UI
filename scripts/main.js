@@ -16,8 +16,8 @@ $(document).ready(function(){
         hidden = hidden ? 0 : 1;
     })
 
-    $("#register_butn").click(function(){
+    $("#register_butn").on("click touchstart", function(){
         $(".form_container.login").addClass("hidden");
         $(".form_container.register").removeClass("hidden");
-    })
+    });
 })
