@@ -1,3 +1,6 @@
+/* look up legal shit for using fonts if this ever
+   goes public */
+
 @font-face{
 	font-family: FiraSans-Regular;
 	src: url("fonts/FiraSans-Regular.ttf");
@@ -316,6 +319,46 @@
     width: calc(100% - 20px - 50px - 40px);
 }
 
+#pass_req_container{
+    width: calc(100% - 30px);
+    height: auto;
+    background: #d3d3d3;
+    color: #424949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pass_req_title{
+    width: calc(100% - 20px);
+    height: auto;
+    background: #3b5999;
+    color: #fff;
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#pass_req_text{
+    width: calc(100% - 20px);
+    font-family: FiraSans-Regular;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: 
+    align-items: center;
+}
+
+.pass_req_item{
+    padding: 5px;
+    margin-left: 20px;
+}
+
 .required_icon{
     width: 50px;
     height: 100%;
@@ -328,7 +371,7 @@
     font-family: Quicksand;
 }
 
-#star{
+.star{
     margin-top: 18px;
 }
 
@@ -356,11 +399,22 @@
     background: #c1392d;
 }
 
-#tick, #cross{
+.tick, .cross{
     transition: .2s;
     transition-delay: .2s;
 }
 
-#tick.hidden, #cross.hidden{
+.tick.hidden, .cross.hidden{
     font-size: 0;
+}
+
+#reg_continue_butn{
+    background: #000;
+    color: #fff;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
