@@ -10,8 +10,8 @@
 }
 
 @font-face{
-	font-family: NexaRust-one;
-    src: url("nexa-rust.script-l-0.otf");
+	font-family: Quicksand;
+    src: url("fonts/Quicksand-Regular.otf");
 }
 
 *{
@@ -129,7 +129,7 @@
 .input_container{
     width: 520px;
     height: 50px;
-    background: #fff;
+    background: blue;
     margin-bottom: 15px;
     display: flex;
     flex-direction: row;
@@ -151,6 +151,7 @@
     padding-bottom: 0;
     /* background: #d7d7d7; */
     background: #fff;
+    transition: width .5s;
 }
 
 .input_field::placeholder{
@@ -235,9 +236,30 @@
     cursor: pointer;
 }
 
+.forgot_icon::selection{
+    background: none;
+    color: none;
+}
+
+.forgot_icon::-moz-selection{
+    background: none;
+    color: none;
+}
+
 #show_icon{
     width: 35px;
     height: 23px;
+}
+
+
+#show_icon::selection{
+    background: none;
+    color: none;
+}
+
+#show_icon::-moz-selection{
+    background: none;
+    color: none;
 }
 
 #login_butn{
@@ -284,4 +306,61 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+#first_name_input{
+    width: calc(100% - 20px - 50px);
+}
+
+#first_name_input.extended{
+    width: calc(100% - 20px - 50px - 40px);
+}
+
+.required_icon{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    font-size: 50px;
+    font-family: Quicksand;
+}
+
+#star{
+    margin-top: 18px;
+}
+
+.valid_symbol{
+    width: 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    font-family: FiraSans-Regular;
+    transition: width .5s, background .2s;
+}
+
+.valid_symbol.hidden{
+    width: 0;
+}
+
+.valid_symbol.valid{
+    background: #27ae61;
+}
+
+.valid_symbol.invalid{
+    background: #c1392d;
+}
+
+#tick, #cross{
+    transition: .2s;
+    transition-delay: .2s;
+}
+
+#tick.hidden, #cross.hidden{
+    font-size: 0;
 }

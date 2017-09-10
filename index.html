@@ -14,13 +14,12 @@
             <div id="content_container">
                 <div class="side_shields left"></div>
                 <div class="side_shields right"></div>
-                <div class="form_container login">
+                <div class="form_container login hidden">
                     <div class="title">Login</div>
-                    <!--TODO: add error for missing or incorret email/password -->
-                    <div id="error_container" class="hidden">
+                     <div id="error_container" class="hidden">
                         <p>Invalid Details</p>
                         <div id="error_container_bottom"></div>
-                    </div>
+                    </div> 
                     <div class="input_container">
                         <div class="email input">
                             <input class="input_field" type="email" placeholder="Email Address" title="Email Address">
@@ -47,15 +46,18 @@
                         Sign-up
                     </div>
                 </div>
-                <div class="form_container register hidden">
+                <div class="form_container register">
                     <div class="title register">Sign up</div>
                     <div id="login_return">Already have an account?</div>
-                    <div class="input_container"></div>
-                    <div class="input_container"></div>
-                    <div class="input_container"></div>
-                    <div class="input_container"></div>
-                    <div class="input_container"></div>
-                    <div class="input_container"></div>
+                    <div class="input_container">
+                        <div class="valid_symbol hidden">
+                            <span id="tick" class="hidden">✓</span>
+                            <span id="cross" class="hidden">x</span>
+                        </div>
+                        <input id="first_name_input" class="input_field" type="email" placeholder="First Name" title="Email Address">
+                        <div class="required_icon"><div id="star">*</div></div>
+                    </div>
+                    <div class="input_container" id="reg_continue_butn"></div>
                 </div>
             </div>
         </div>
