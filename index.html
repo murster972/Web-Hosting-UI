@@ -16,8 +16,9 @@
 			function resize(){
                 var h1 = $(".form_container.register").height();
 
-                //NOTE: this is not trigged if screen goes from reg to login, or vis versa, this is
-                //      because align-items is not transitionable so it looks very "rough" if done
+                //TODO - Fix transtition between login and reg, and vis vera, when switching from center to flex-start
+
+                $(".side_shields").height(h1 + "px");
 
                 if(h1 >= window.innerHeight && !$(".form_container.register").hasClass("hidden")){
                     $("#content_container").css("align-items", "flex-start");
