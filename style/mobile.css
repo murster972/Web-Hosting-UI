@@ -5,6 +5,7 @@
 
     #content_container{
         width: 100%;
+        align-items: flex-start;
     }
 
     .form_container.login.hidden{
