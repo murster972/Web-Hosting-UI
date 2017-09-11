@@ -35,10 +35,7 @@ function emailValidation(email){
     //local regex
     r = local.match(/^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~][a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]*[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]$/g);
     
-    //console.log(r, r[0].length, local.length);
-
     if(!r) return 0;
-
 
     //domain regex
     r = domain.match(/^[a-zA-Z0-9.][a-zA-Z0-9-.]*[a-zA-Z0-9.]$/g);
