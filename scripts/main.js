@@ -18,12 +18,12 @@ $(document).ready(function(){
 
     $("#register_butn").on("click touchstart", function(){
         $(".form_container.login").addClass("hidden");
-        $(".form_container.register").removeClass("hidden");
+        $(".form_container.register").removeClass("hidden")
     });
 
     $("#login_return").on("click touchstart", function(){
         $(".form_container.login").removeClass("hidden");
-        $(".form_container.register").addClass("hidden");
+        $(".form_container.register").addClass("hidden")
     });
 
 

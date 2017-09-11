@@ -9,6 +9,25 @@
         <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
         <script type="text/javascript" src="scripts/validation.js"></script>
+        <script type="text/javascript">
+			window.addEventListener("resize", resize, false);
+			window.addEventListener("load", resize, false);
+
+			function resize(){
+                var h1 = $(".form_container.register").height();
+
+                //NOTE: this is not trigged if screen goes from reg to login, or vis versa, this is
+                //      because align-items is not transitionable so it looks very "rough" if done
+
+                if(h1 >= window.innerHeight && !$(".form_container.register").hasClass("hidden")){
+                    $("#content_container").css("align-items", "flex-start");
+                }
+
+                else{
+                    $("#content_container").css("align-items", "center");
+                }
+			}
+		</script>
     </head>
     <body>
          <div id="containers_wrapper"> 
