@@ -30,10 +30,15 @@ function emailValidation(email){
     local = tmp[0];
     domain = tmp[1];
 
+    console.log(local, domain);
+
     //local regex
     r = local.match(/^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~][a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]*[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]$/g);
+    
+    //console.log(r, r[0].length, local.length);
 
     if(!r) return 0;
+
 
     //domain regex
     r = domain.match(/^[a-zA-Z0-9.][a-zA-Z0-9-.]*[a-zA-Z0-9.]$/g);
