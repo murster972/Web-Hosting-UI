@@ -30,4 +30,14 @@ $(document).ready(function(){
     $(".input_field.reg").focusout(function(){
         validateInput($(this).attr("id"));
     })
+
+
+    //NOTE - just for testing, needs to be changed so form submitted on click
+    $("#reg_continue_butn").click(function(){submitForm()});
+
+    $(window).click(function(){
+        $("#reg_error_box").addClass("hidden");
+        $("#reg_error_title").addClass("hidden");
+        $("#reg_error_box p").addClass("hidden");
+    });
 })

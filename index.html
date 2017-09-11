@@ -50,7 +50,16 @@
                 <div class="form_container register">
                     <div class="title register">Sign up</div>
                     <div id="login_return">Already have an account?</div>
-                    <!-- add error box to explain errors on submit -->
+                    <div id="reg_error_box">
+                        <div id="reg_error_title">Errors</div>
+                        <p>
+                            <span id="blank">- Fields with (*) are required<br>
+                            <span id="name">- First name and surname can only contain: a-z, A-Z<br>
+                            <span id="email">- Email address must have valid syntax<br>
+                            <span id="pass">- Password must be 8 or more characters<br>
+                            <span id="passr">- Passwords must match<br>
+                        </p>
+                    </div>
                     <div class="input_container">
                         <div class="valid_symbol hidden first_name_input">
                             <span class="tick hidden first_name_input">✓</span>

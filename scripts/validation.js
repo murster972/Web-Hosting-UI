@@ -1,5 +1,3 @@
-valid_inputs = {}
-
 //regex used to test each input fieled for registration
 valid_test = {"first_name_input": function(name){return name.match(/[^a-zA-Z]/g)},
               "surname_input": function(name){return name.match(/[^a-zA-Z]/g)},
@@ -9,14 +7,45 @@ valid_test = {"first_name_input": function(name){return name.match(/[^a-zA-Z]/g)
              }
 
 function submitForm(){
-    
+    var ids = ["first_name_input", "surname_input", "email_input_reg", "pass_input_reg", "pass_repeat_input"];
+        txt = {"first_name_input": "name", "surname_input": "name", "email_input_reg": "email",
+               "pass_input_reg": "pass", "pass_repeat_input": "passr"};
+
+        blanks = 0;
+        errs = []
+
+    for(i = 0; i < ids.length; i++){
+        t = validateInput(ids[i]);
+        if(t) errs.push(txt[ids[i]]);
+        if(t == 2) blanks++;
+    }
+
+    if(blanks) errs.push("blank");
+
+    if(errs){
+
+    }
+
+    else{
+        
+    }
 }
 
 function validateInput(id){
     var val = $("#" + id).val();
     
-    if(valid_test[id](val) || !val) symbol(id, 0);
-    else symbol(id, 1);
+    if(valid_test[id](val)){
+        symbol(id, 0);
+        return 0;
+    }
+    else if(!val){
+        symbol(id, 0);
+        return 1;
+    }
+    else{
+        symbol(id, 1);
+        return 2;
+    }
 }
 
 

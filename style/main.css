@@ -351,11 +351,6 @@
     width: calc(100% - 20px);
     font-family: FiraSans-Regular;
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: 
-    align-items: center;
 }
 
 .pass_req_item{
@@ -421,4 +416,39 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+#reg_error_box{
+    width: calc(100% - 30px);
+    height: auto;
+    background: #d3d3d3;
+    color: #424949;
+    margin-bottom: 15px;
+}
+
+#reg_error_box.hidden{
+    height: 0;
+    font-size: 0;
+}
+
+#reg_error_title{
+    width: calc(100% - 20px);
+    height: auto;
+    padding: 10px;
+    background: #b8312f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    transition: .5s;
+}
+
+#reg_error_box p{
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    padding: 15px;
+    margin-left: 20px;
+    transition: .5s;
 }
