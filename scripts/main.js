@@ -1,9 +1,6 @@
 var hidden = 1;
 var changed = 0;
 
-var test = 0;
-var test1 = 0;
-
 $(document).ready(function(){
     $(".pass.show").click(function(){
         if(hidden){
@@ -30,8 +27,7 @@ $(document).ready(function(){
     });
 
 
-    //tests
-    $("#login_butn").click(function(){
-        $("#error_container").removeClass("hidden");
+    $(".input_field.reg").focusout(function(){
+        validateInput($(this).attr("id"));
     })
 })

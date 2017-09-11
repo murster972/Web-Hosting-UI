@@ -132,7 +132,7 @@
 .input_container{
     width: 520px;
     height: 50px;
-    background: blue;
+    background: none;
     margin-bottom: 15px;
     display: flex;
     flex-direction: row;
@@ -319,6 +319,10 @@
     width: calc(100% - 20px - 50px - 40px);
 }
 
+.extended{
+    width: calc(100% - 20px - 50px - 40px);
+}
+
 #pass_req_container{
     width: calc(100% - 30px);
     height: auto;
@@ -384,7 +388,7 @@
     color: #fff;
     font-size: 30px;
     font-family: FiraSans-Regular;
-    transition: width .5s, background .2s;
+    transition: width .5s, background .5s;
 }
 
 .valid_symbol.hidden{

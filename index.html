@@ -50,28 +50,29 @@
                 <div class="form_container register">
                     <div class="title register">Sign up</div>
                     <div id="login_return">Already have an account?</div>
+                    <!-- add error box to explain errors on submit -->
                     <div class="input_container">
-                        <div class="valid_symbol hidden">
-                            <span class="tick hidden">✓</span>
-                            <span class="cross hidden">x</span>
+                        <div class="valid_symbol hidden first_name_input">
+                            <span class="tick hidden first_name_input">✓</span>
+                            <span class="cross hidden first_name_input">x</span>
                         </div>
-                        <input id="first_name_input" class="input_field" type="text" placeholder="First Name" title="First Name">
+                        <input id="first_name_input" class="input_field reg" type="text" placeholder="First Name" title="First Name">
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
                     <div class="input_container">
-                        <div class="valid_symbol hidden">
-                            <span class="tick hidden">✓</span>
-                            <span class="cross hidden">x</span>
+                        <div class="valid_symbol hidden surname_input">
+                            <span class="tick hidden surname_input">✓</span>
+                            <span class="cross hidden surname_input">x</span>
                         </div>
-                        <input id="surname_input" class="input_field" type="text" placeholder="Surname" title="Surname">
+                        <input id="surname_input" class="input_field reg" type="text" placeholder="Surname" title="Surname">
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
                     <div class="input_container">
-                        <div class="valid_symbol hidden">
-                            <span class="tick hidden">✓</span>
-                            <span class="cross hidden">x</span>
+                        <div class="valid_symbol hidden email_input_reg">
+                            <span class="tick hidden email_input_reg">✓</span>
+                            <span class="cross hidden email_input_reg">x</span>
                         </div>
-                        <input id="email_input_reg" class="input_field" type="email" placeholder="Email Address" title="Email Address">
+                        <input id="email_input_reg" class="input_field reg" type="email" placeholder="Email Address" title="Email Address">
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
                     <div id="pass_req_container">
@@ -81,21 +82,21 @@
                         </div>
                     </div>
                     <div class="input_container">
-                        <div class="valid_symbol hidden">
-                            <span class="tick hidden">✓</span>
-                            <span class="cross hidden">x</span>
+                        <div class="valid_symbol hidden pass_input_reg">
+                            <span class="tick hidden pass_input_reg">✓</span>
+                            <span class="cross hidden pass_input_reg">x</span>
                         </div>
                         <!-- add password requirments -->
-                        <input id="pass_input_reg" class="input_field" type="password" placeholder="Password" title="Password">
+                        <input id="pass_input_reg" class="input_field reg" type="password" placeholder="Password" title="Password">
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
                     <div class="input_container">
-                        <div class="valid_symbol hidden">
-                            <span class="tick hidden">✓</span>
-                            <span class="cross hidden">x</span>
+                        <div class="valid_symbol hidden pass_repeat_input">
+                            <span class="tick hidden pass_repeat_input">✓</span>
+                            <span class="cross hidden pass_repeat_input">x</span>
                         </div>
                         <!-- add box saying "Passwords dont match" error -->
-                        <input id="pass_repeat_input" class="input_field" type="password" placeholder="Password Repeat" title="Password Repeat">
+                        <input id="pass_repeat_input" class="input_field reg" type="password" placeholder="Password Repeat" title="Password Repeat">
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
                     <div class="input_container" id="reg_continue_butn">Continue</div>

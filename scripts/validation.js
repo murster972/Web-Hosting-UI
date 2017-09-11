@@ -1,11 +1,44 @@
 valid_inputs = {}
 
+//regex used to test each input fieled for registration
+valid_test = {"first_name_input": function(name){return name.match(/[^a-zA-Z]/g)},
+              "surname_input": function(name){return name.match(/[^a-zA-Z]/g)},
+              "email_input_reg": function(email){return !emailValidation(email)},
+              "pass_input_reg": function(pass){return pass.length < 8},
+              "pass_repeat_input": function(pass){return pass != $("#pass_input_reg").val()}
+             }
+
 function submitForm(){
     
 }
 
 function validateInput(id){
+    var val = $("#" + id).val();
     
+    if(valid_test[id](val) || !val) symbol(id, 0);
+    else symbol(id, 1);
+}
+
+
+//changes valid symbol for each input to valid or invalid
+function symbol(id, valid){
+    $("#" + id + ".input_field").addClass("extended");
+
+    tmp = "." + id + ".valid_symbol"
+    $(tmp).removeClass("hidden");
+
+    $(tmp).removeClass(valid ? "invalid" : "valid");
+    $(tmp).addClass(valid ? "valid" : "invalid");
+
+    if(valid){
+        $(".cross." + id).addClass("hidden");
+        $(".tick." + id).removeClass("hidden");
+    }
+
+    else{
+        $(".cross." + id).removeClass("hidden");
+        $(".tick." + id).addClass("hidden");
+    }
 }
 
 function emailValidation(email){
@@ -16,32 +49,31 @@ function emailValidation(email){
             dot(.) - providing its not the first or last char
 
        checks domain - ^[a-zA-Z0-9.][a-zA-Z0-9-.]*[a-zA-Z0-9.]$
+                       [.]{2,}
             upper and lower case
             numbers - although domain cant be all numbers
             hypen(-) - providing its not the first or last char
-            dot - dots cannot be next to each other NOTE - unsure if can start with dot */
+            dot - dots cannot be next to each other NOTE - unsure if domain can start with dot */
 
     var local, domain, tmp, r, r1;
 
     tmp = email.split("@");
 
-    if(tmp.length != 2) return 0;
+    if(tmp.length != 2 || email.length > 254) return 0;
 
     local = tmp[0];
     domain = tmp[1];
 
-    console.log(local, domain);
-
     //local regex
     r = local.match(/^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~][a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]*[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]$/g);
     
-    if(!r) return 0;
+    if(!r || local.length > 64) return 0;
 
     //domain regex
     r = domain.match(/^[a-zA-Z0-9.][a-zA-Z0-9-.]*[a-zA-Z0-9.]$/g);
     r1 = domain.match(/[.]{2,}/g)
     
-    if(!r || r1) return 0;
+    if(!r || r1 || domain.length > 255) return 0;
 
     return 1;
 
