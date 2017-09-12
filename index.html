@@ -15,18 +15,16 @@
 
 			function resize(){
                 var h1 = $(".form_container.register").height();
+                    h2 = $(".form_container.login").height()
 
-                //TODO - Fix transtition between login and reg, and vis vera, when switching from center to flex-start
+                //NOTE - Fixed the piece of shit transitions after trying - for a fucking hour - the first solution
+                //       didnt work so just calc the margins manually.
 
-                $(".side_shields").height(h1 + "px");
+                $(".side_shields").height("100%");
+                $(".form_container.login").css("margin-top", (window.innerHeight - h2) / 2 - 50 + "px");
 
-                if(h1 >= window.innerHeight && !$(".form_container.register").hasClass("hidden")){
-                    $("#content_container").css("align-items", "flex-start");
-                }
-
-                else{
-                    $("#content_container").css("align-items", "center");
-                }
+                if(h1 <= window.innerHeight) $(".form_container.register").css("margin-top", (window.innerHeight - h1) / 2 - 20 + "px");
+                else $(".form_container.register").css("margin-top", "20px");
 			}
 		</script>
     </head>
