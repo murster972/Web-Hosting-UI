@@ -249,18 +249,18 @@
     color: none;
 }
 
-#show_icon{
+.show_icon{
     width: 35px;
     height: 23px;
 }
 
 
-#show_icon::selection{
+.show_icon::selection{
     background: none;
     color: none;
 }
 
-#show_icon::-moz-selection{
+.show_icon::-moz-selection{
     background: none;
     color: none;
 }
@@ -463,4 +463,8 @@
     opacity: 0;
     font-size: 0;
     padding: 0;
+}
+
+#pass_input_reg, #pass_repeat_input{
+    width: calc(100% - 30px - 55px - 45px);
 }

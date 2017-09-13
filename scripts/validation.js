@@ -12,36 +12,38 @@ function submitForm(){
                "pass_input_reg": "pass", "pass_repeat_input": "passr"};
 
         blanks = 0;
-        errs = []
+        errs = new Set()
 
     for(i = 0; i < ids.length; i++){
         t = validateInput(ids[i]);
-        if(t) errs.push(txt[ids[i]]);
-        if(t == 2) blanks++;
+        console.log(t, ids[i]);
+        if(t == 0) errs.add(txt[ids[i]]);
+        if(t == 1) blanks++;
     }
 
-    if(blanks) errs.push("blank");
+    if(blanks) errs.add("blank");
 
-    if(errs){
+    if(errs.length){
 
     }
-
     else{
-        
+        alert("upload to server and continue to next reg page.");
     }
+    
 }
 
 function validateInput(id){
     var val = $("#" + id).val();
     
-    if(valid_test[id](val)){
-        symbol(id, 0);
-        return 0;
-    }
-    else if(!val){
+    if(!val){
         if(id == "pass_repeat_input" && $(".valid_symbol.pass_input_reg").hasClass("hidden")) return 0;
         symbol(id, 0)
         return 1;
+    }
+
+    else if(valid_test[id](val)){
+        symbol(id, 0);
+        return 0;
     }
 
     else{

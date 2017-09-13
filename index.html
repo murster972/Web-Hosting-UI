@@ -47,10 +47,10 @@
                     </div>
                     <div class="input_container">
                         <div class="pass input">
-                            <input id="pass_input" class="input_field" type="password" placeholder="Password" title="Password">
+                            <input id="pass_input" class="input_field pass_login" type="password" placeholder="Password" title="Password">
                         </div>
-                        <div class="pass show">
-                            <img id="show_icon" src="images/hide_icon.png"/>
+                        <div class="pass show" id="pass_login">
+                            <img class="show_icon pass_login" src="images/hide_icon.png"/>
                         </div>
                         <div class="pass forgot">
                             <div class="forgot_icon" title="Forgot Password">?</div>
@@ -111,8 +111,10 @@
                             <span class="tick hidden pass_input_reg">✓</span>
                             <span class="cross hidden pass_input_reg">x</span>
                         </div>
-                        <!-- add password requirments -->
-                        <input id="pass_input_reg" class="input_field reg" type="password" placeholder="Password" title="Password">
+                        <input id="pass_input_reg" class="input_field reg pass_reg" type="password" placeholder="Password" title="Password">
+                        <div class="pass show" id="pass_reg">
+                            <img class="show_icon pass_reg" src="images/hide_icon.png"/>
+                        </div>
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
                     <div class="input_container">
@@ -121,7 +123,10 @@
                             <span class="cross hidden pass_repeat_input">x</span>
                         </div>
                         <!-- add box saying "Passwords dont match" error -->
-                        <input id="pass_repeat_input" class="input_field reg" type="password" placeholder="Password Repeat" title="Password Repeat">
+                        <input id="pass_repeat_input" class="input_field reg pass_r_reg" type="password" placeholder="Password Repeat" title="Password Repeat">
+                        <div class="pass show" id="pass_r_reg">
+                            <img class="show_icon pass_r_reg" src="images/hide_icon.png"/>
+                        </div>
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
                     <div class="input_container" id="reg_continue_butn">Continue</div>
