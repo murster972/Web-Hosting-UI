@@ -28,7 +28,11 @@ $(document).ready(function(){
 
 
     $(".input_field.reg").focusout(function(){
-        validateInput($(this).attr("id"));
+        var id = $(this).attr("id");
+
+        validateInput(id);
+
+        if(id == "pass_input_reg") validateInput("pass_repeat_input");
     })
 
     $(".form_container.register").on("regScreenShown", function(){resize()})

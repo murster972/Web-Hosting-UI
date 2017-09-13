@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Login or Sign-up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/mobile.css">
         <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
@@ -16,9 +17,6 @@
 			function resize(){
                 var h1 = $(".form_container.register").height();
                     h2 = $(".form_container.login").height()
-
-                //NOTE - Fixed the piece of shit transitions after trying - for a fucking hour - the first solution
-                //       didnt work so just calc the margins manually.
 
                 $(".side_shields").height("100%");
                 $(".form_container.login").css("margin-top", (window.innerHeight - h2) / 2 - 50 + "px");

@@ -39,9 +39,11 @@ function validateInput(id){
         return 0;
     }
     else if(!val){
-        symbol(id, 0);
+        if(id == "pass_repeat_input" && $(".valid_symbol.pass_input_reg").hasClass("hidden")) return 0;
+        symbol(id, 0)
         return 1;
     }
+
     else{
         symbol(id, 1);
         return 2;
@@ -84,6 +86,9 @@ function emailValidation(email){
             hypen(-) - providing its not the first or last char
             dot - dots cannot be next to each other NOTE - unsure if domain can start with dot */
 
+
+    //BUG: Local regex doesnt match if only one character
+
     var local, domain, tmp, r, r1;
 
     tmp = email.split("@");
@@ -92,6 +97,9 @@ function emailValidation(email){
 
     local = tmp[0];
     domain = tmp[1];
+
+    l_regex_start = "^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]";
+    l_regex_end = ["[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]", "[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]"];
 
     //local regex
     r = local.match(/^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~][a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]*[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]$/g);
