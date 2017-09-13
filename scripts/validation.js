@@ -12,24 +12,22 @@ function submitForm(){
                "pass_input_reg": "pass", "pass_repeat_input": "passr"};
 
         blanks = 0;
-        errs = new Set()
+        errs = new Set();
 
     for(i = 0; i < ids.length; i++){
         t = validateInput(ids[i]);
-        console.log(t, ids[i]);
         if(t == 0) errs.add(txt[ids[i]]);
         if(t == 1) blanks++;
     }
 
     if(blanks) errs.add("blank");
 
-    if(errs.length){
-
+    if(errs.size){
+        show_reg_errors(Array.from(errs));
     }
     else{
-        alert("upload to server and continue to next reg page.");
+        alert("upload to server and continue to reg page")
     }
-    
 }
 
 function validateInput(id){
@@ -125,4 +123,25 @@ function emailValidation(email){
     if(!r || r1 || domain.length > 255) return 0;
 
     return 1;
+}
+
+function show_reg_errors(e){
+    var ids = ["blank", "name", "email", "pass", "passr"];
+
+    console.log(e)
+
+    $("#reg_error_box").removeClass("hidden");
+
+    for(i = 0; i < ids.length; i++){
+        if(e.indexOf(ids[i]) == -1) $("#" + ids[i]).addClass("hidden");
+        else{
+            console.log(ids[i]);
+            $("#" + ids[i]).removeClass("hidden");
+        }
+    }
+
+    //recenters login form after error box is shown
+    resize();
+
+    $.scrollTo($('#reg_error_box'), 1000);
 }

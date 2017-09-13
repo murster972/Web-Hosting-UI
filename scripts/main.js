@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".pass.show").click(function(){
+    $(".pass.show").on("click touch", function(){
         var id = $(this).attr("id");
             t = $("." + id).attr("type");
 
@@ -31,11 +31,4 @@ $(document).ready(function(){
 
     //NOTE - just for testing, needs to be changed so form submitted on click
     $("#reg_continue_butn").click(function(){submitForm()});
-
-
-    //tests
-    $(window).click(function(){
-        $(".errs#blank").removeClass("hidden");
-        $(".errs#name").removeClass("hidden");
-    })
 })
