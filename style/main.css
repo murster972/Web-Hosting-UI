@@ -465,6 +465,6 @@
     padding: 0;
 }
 
-#pass_input_reg, #pass_repeat_input{
+#pass_input_reg{
     width: calc(100% - 30px - 55px - 45px);
 }
