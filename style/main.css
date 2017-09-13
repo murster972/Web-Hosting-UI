@@ -421,20 +421,19 @@
 #reg_error_box{
     width: calc(100% - 30px);
     height: auto;
-    background: #d3d3d3;
-    color: #424949;
+    background: none;
     margin-bottom: 15px;
 }
 
 #reg_error_box.hidden{
     height: 0;
-    font-size: 0;
+    padding: 0;
 }
 
-#reg_error_title{
-    width: calc(100% - 20px);
+#reg_error_bar{
+    width: calc(100% - 10px);
     height: auto;
-    padding: 10px;
+    padding: 5px;
     background: #b8312f;
     color: #fff;
     display: flex;
@@ -445,10 +444,23 @@
     transition: .5s;
 }
 
-#reg_error_box p{
+#err_txt_wrapper{
+    background: #e13d46;
+    padding: 13px;
+}
+
+.errs{
+    width: 100%;
     font-family: FiraSans-Regular;
     font-size: 18px;
-    padding: 15px;
+    color: #fff;
+    padding: 2px;
     margin-left: 20px;
-    transition: .5s;
+    transition: .1s linear .1s, opacity .1s;
+}
+
+.errs.hidden{
+    opacity: 0;
+    font-size: 0;
+    padding: 0;
 }

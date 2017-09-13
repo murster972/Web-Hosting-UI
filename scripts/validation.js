@@ -84,10 +84,10 @@ function emailValidation(email){
             upper and lower case
             numbers - although domain cant be all numbers
             hypen(-) - providing its not the first or last char
-            dot - dots cannot be next to each other NOTE - unsure if domain can start with dot */
+            dot - dots cannot be next to each other NOTE - unsure if domain can start with dot, going with can't */
 
 
-    //BUG: Local regex doesnt match if only one character
+    //NOTE: now works, but code needs tidied up
 
     var local, domain, tmp, r, r1;
 
@@ -98,20 +98,29 @@ function emailValidation(email){
     local = tmp[0];
     domain = tmp[1];
 
-    l_regex_start = "^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]";
-    l_regex_end = ["[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]", "[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]"];
+
+    allowed_l = "a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~";
+    r = "(?=^[" + allowed_l + "])";
+
+    if(local.length > 1) r = r + "(?=[" + allowed_l + ".])(?=^[^.].*[^.]$)";
+    else r = r + "(?=^[^.])";
 
     //local regex
-    r = local.match(/^[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~][a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]*[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~]$/g);
+    r = local.match(new RegExp(r, "g"));
     
     if(!r || local.length > 64) return 0;
 
+    allowed_d = "a-zA-Z0-9";
+    r = "^[" + allowed_d + "]";
+
+    if(domain.length > 1) r = r + "[" + allowed_d + "-.]*[" + allowed_d + ".]$";
+    else r = "(?=" + r + ")(?=^[^-])";
+
     //domain regex
-    r = domain.match(/^[a-zA-Z0-9.][a-zA-Z0-9-.]*[a-zA-Z0-9.]$/g);
+    r = domain.match(new RegExp(r, "g"));
     r1 = domain.match(/[.]{2,}/g)
     
     if(!r || r1 || domain.length > 255) return 0;
 
     return 1;
-
 }
