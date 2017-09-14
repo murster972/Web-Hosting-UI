@@ -315,8 +315,21 @@
     width: calc(100% - 20px - 50px);
 }
 
-#first_name_input.extended{
+#first_name_input.extended, #surname_input.extended, #email_input_reg.extended, #pass_repeat_input.extended{
     width: calc(100% - 20px - 50px - 40px);
+}
+
+#pass_input_reg.extended{
+    width: calc(100% - 20px - 49.86px - 40px - 59.89px);
+}
+
+
+#pass_input_reg{
+    width: calc(100% - 30px - 55px - 45px);
+}
+
+.input_field.reg{
+    width: calc(100% - 20px - 50px);
 }
 
 .extended{
@@ -421,13 +434,54 @@
 #reg_error_box{
     width: calc(100% - 30px);
     height: auto;
-    background: none;
+    background: #e13d46;
     margin-bottom: 15px;
+    padding-top: 15px;
+    transition: .2s;
 }
 
 #reg_error_box.hidden{
     height: 0;
-    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reg_error_item_container{
+    width: calc(100% - 30px);
+    height: auto;
+    padding: 1px; /* space between items */
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    transition: .2s;
+}
+
+.reg_error_item_container.hidden{
+    width: 0;
+    font-size: 0;
+}
+
+.reg_err_item_dash{
+    width: 15px;
+    height: 100%;
+    padding-right: 5px;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reg_err_item{
+    width: 470px;
+    height: 100%;
+    background: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 #reg_error_bar{
@@ -441,30 +495,6 @@
     align-items: center;
     font-family: FiraSans-Regular;
     font-size: 20px;
-    transition: .5s;
-}
-
-#err_txt_wrapper{
-    background: #e13d46;
-    padding: 13px;
-}
-
-.errs{
-    width: 100%;
-    font-family: FiraSans-Regular;
-    font-size: 18px;
-    color: #fff;
-    padding: 2px;
-    margin-left: 20px;
-    transition: .1s linear .1s, opacity .1s;
-}
-
-.errs.hidden{
-    opacity: 0;
-    font-size: 0;
-    padding: 0;
-}
-
-#pass_input_reg{
-    width: calc(100% - 30px - 55px - 45px);
+    transition: .2s;
+    margin-top: 15px;
 }

@@ -31,4 +31,5 @@ $(document).ready(function(){
 
     //NOTE - just for testing, needs to be changed so form submitted on click
     $("#reg_continue_butn").click(function(){submitForm()});
+
 })

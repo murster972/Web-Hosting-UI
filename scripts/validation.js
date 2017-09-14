@@ -142,6 +142,4 @@ function show_reg_errors(e){
 
     //recenters login form after error box is shown
     resize();
-
-    $.scrollTo($('#reg_error_box'), 1000);
 }
