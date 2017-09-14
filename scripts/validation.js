@@ -113,8 +113,8 @@ function emailValidation(email){
     allowed_d = "a-zA-Z0-9";
     r = "^[" + allowed_d + "]";
 
-    if(domain.length > 1) r = r + "[" + allowed_d + "-.]*[" + allowed_d + ".]$";
-    else r = "(?=" + r + ")(?=^[^-])";
+    if(domain.length > 1) r = r + "[" + allowed_d + "-.]*[" + allowed_d + "]$";
+    else r = "(?=" + r + ")(?=^[^-.])";
 
     //domain regex
     r = domain.match(new RegExp(r, "g"));
