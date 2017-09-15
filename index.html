@@ -17,20 +17,29 @@
 			function resize(){
                 var h1 = $(".form_container.register").height();
                     h2 = $(".form_container.login").height()
+                    hw = window.innerHeight;
 
                 $(".side_shields").height("100%");
-                $(".form_container.login").css("margin-top", (window.innerHeight - h2) / 2 - 50 + "px");
+                $(".form_container.login").css("margin-top", (hw - h2) / 2 + "px");
 
-                if(h1 <= window.innerHeight) $(".form_container.register").css("margin-top", (window.innerHeight - h1) / 2 - 20 + "px");
-                else $(".form_container.register").css("margin-top", "20px");
+                if(h1 <= hw){
+                    $(".form_container.register").css("margin-top", (hw - h1) / 2 - 10 + "px");
+                    $("#reg_continue_butn").css("margin-bottom", "0px");
+                }
+                else{
+                    $(".form_container.register").css("margin-top", "0px");
+                    $("#reg_continue_butn").css("margin-bottom", "15px");
+                }
 			}
 		</script>
     </head>
     <body>
 
-        <!-- TODO: FIX THE FUCKING CSS so everythings is properly aligned -->
+        <!-- BUG: scroll-bar not shown on login but reg form is "sliding" down and left instead of just left -->
 
-         <div id="containers_wrapper"> 
+        <!-- TODO: Fix issues transitions when windows resized and create a no JS version -->
+
+         <div id="containers_wrapper">
             <div id="content_container">
                 <div class="side_shields left"></div>
                 <div class="side_shields right"></div>
@@ -39,7 +48,7 @@
                      <div id="error_container" class="hidden">
                         <p>Invalid Details</p>
                         <div id="error_container_bottom"></div>
-                    </div> 
+                    </div>
                     <div class="input_container">
                         <div class="email input">
                             <input class="input_field" type="email" placeholder="Email Address" title="Email Address">
@@ -73,7 +82,7 @@
                             <!-- change so "-" and error are different divs, i.e
                                 <div id=container(will keep all '-' in line)
                                     <div dash></div>
-                                    <div error_txt></div> 
+                                    <div error_txt></div>
                                 </div>
                             -->
                         <div id="blank" class="reg_error_item_container hidden">

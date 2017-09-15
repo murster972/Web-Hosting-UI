@@ -1,3 +1,5 @@
+//TODO: tidy up js code
+
 //regex used to test each input fieled for registration
 valid_test = {"first_name_input": function(name){return name.match(/[^a-zA-Z]/g)},
               "surname_input": function(name){return name.match(/[^a-zA-Z]/g)},
@@ -32,7 +34,7 @@ function submitForm(){
 
 function validateInput(id){
     var val = $("#" + id).val();
-    
+
     if(!val){
         if(id == "pass_repeat_input" && $(".valid_symbol.pass_input_reg").hasClass("hidden")) return 0;
         symbol(id, 0)
@@ -91,13 +93,12 @@ function emailValidation(email){
 
     var local, domain, tmp, r, r1;
 
-    tmp = email.split("@");
+    local_domain = email.split("@");
 
-    if(tmp.length != 2 || email.length > 254) return 0;
+    if(local_domain.length != 2 || email.length > 254) return 0;
 
-    local = tmp[0];
-    domain = tmp[1];
-
+    local = local_domain[0];
+    domain = local_domain[1];
 
     allowed_l = "a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~";
     r = "(?=^[" + allowed_l + "])";
@@ -106,9 +107,9 @@ function emailValidation(email){
     else r = r + "(?=^[^.])";
 
     //local regex
-    r = local.match(new RegExp(r, "g"));
-    
-    if(!r || local.length > 64) return 0;
+    local_match = local.match(new RegExp(r, "g"));
+
+    if(!local_match || local.length > 64) return 0;
 
     allowed_d = "a-zA-Z0-9";
     r = "^[" + allowed_d + "]";
@@ -119,7 +120,7 @@ function emailValidation(email){
     //domain regex
     r = domain.match(new RegExp(r, "g"));
     r1 = domain.match(/[.]{2,}/g)
-    
+
     if(!r || r1 || domain.length > 255) return 0;
 
     return 1;
@@ -128,16 +129,11 @@ function emailValidation(email){
 function show_reg_errors(e){
     var ids = ["blank", "name", "email", "pass", "passr"];
 
-    console.log(e)
-
     $("#reg_error_box").removeClass("hidden");
 
     for(i = 0; i < ids.length; i++){
         if(e.indexOf(ids[i]) == -1) $("#" + ids[i]).addClass("hidden");
-        else{
-            console.log(ids[i]);
-            $("#" + ids[i]).removeClass("hidden");
-        }
+        else $("#" + ids[i]).removeClass("hidden");
     }
 
     //recenters login form after error box is shown

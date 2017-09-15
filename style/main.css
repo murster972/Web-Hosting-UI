@@ -34,7 +34,7 @@
 
 #content_container{
     width: 550px;
-    height: 100%;
+    height: auto;
     background: ;
     display: flex;
     /* align-items: center; */
@@ -43,7 +43,7 @@
 .side_shields{
     width: inherit;
     height: 100%;
-    position: absolute;
+    position: fixed;	/* stops reg/login screen being shown on the other screen */
     background: #0c77c9;
     z-index: 10;
 }
@@ -60,12 +60,9 @@
     width: inherit;
     height: auto;
     position: absolute;
-    padding: 15px;
-    padding-left: 0;
-    padding-right: 0;
     /* background: #fff; */
     background: #0c77c9;
-    transition: .5s;
+    transition: height 0s .7s, margin-top 0s, .5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -429,6 +426,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+	margin-bottom: 0;
 }
 
 #reg_error_box{

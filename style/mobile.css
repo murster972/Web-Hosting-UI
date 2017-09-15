@@ -19,4 +19,8 @@
     .input_container{
         width: calc(100% - 30px);
     }
+
+    #reg_continue_butn{
+        margin-bottom: 15px;
+    }
 }
