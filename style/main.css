@@ -8,8 +8,7 @@
 
 @font-face{
 	font-family: NexaRust;
-    src: url("nexarust/NexaRustScriptL-0.otf");
-    /* src: url("nexarust/NexaRustSlab-BlackShadow01.otf") */
+    src: url("fonts/NexaRustScriptL-0.otf");
 }
 
 @font-face{
