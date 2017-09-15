@@ -1,6 +1,5 @@
 //TODO: tidy up js code
 
-
 $(document).ready(function(){
     $(".pass.show").on("click touch", function(){
         var id = $(this).attr("id");
@@ -8,14 +7,15 @@ $(document).ready(function(){
 
         $("." + id).attr("type", t == "password" ? "text" : "password");
         $(".show_icon." + id).attr("src", "images/" + (t == "password" ? "show" : "hide") + "_icon.png");
+        $(".show_icon." + id).attr("title", t == "password" ? "Hide Password" : "Show Password");
     })
 
     $("#register_butn").on("click touchstart", function(){
         $(".form_container.login").addClass("hidden");
 
         //resets register form height
+        $(".form_container.register").css("transition", "margin-left .5s")
         $(".form_container.register").height("auto");
-
         $(".form_container.register").trigger("regScreenShown").removeClass("hidden");
     });
 
@@ -23,6 +23,7 @@ $(document).ready(function(){
         $(".form_container.login").removeClass("hidden");
 
         //stops scroll bar being shown on login screen
+        $(".form_container.register").css("transition", "height 0s .5s, margin-top 0s .5s, margin-left .5s")
         $(".form_container.register").height($(".form_container.register").height());
         $(".form_container.register").height("100%");
 

@@ -15,7 +15,7 @@
 			window.addEventListener("load", resize, false);
 
 			function resize(){
-                var h1 = $(".form_container.register").height();
+                var h1 = $(".form_container.register").height() - 15;
                     h2 = $(".form_container.login").height()
                     hw = window.innerHeight;
 
@@ -23,6 +23,7 @@
                 $(".form_container.login").css("margin-top", (hw - h2) / 2 + "px");
 
                 if(h1 <= hw){
+                    console.log(h1, hw)
                     $(".form_container.register").css("margin-top", (hw - h1) / 2 - 10 + "px");
                     $("#reg_continue_butn").css("margin-bottom", "0px");
                 }
@@ -34,9 +35,6 @@
 		</script>
     </head>
     <body>
-
-        <!-- BUG: scroll-bar not shown on login but reg form is "sliding" down and left instead of just left -->
-
         <!-- TODO: Fix issues transitions when windows resized and create a no JS version -->
 
          <div id="containers_wrapper">
@@ -62,7 +60,7 @@
                             <input id="pass_input" class="input_field pass_login" type="password" placeholder="Password" title="Password">
                         </div>
                         <div class="pass show" id="pass_login">
-                            <img class="show_icon pass_login" src="images/hide_icon.png"/>
+                            <img class="show_icon pass_login" src="images/hide_icon.png" title="Show Password"/>
                         </div>
                         <div class="pass forgot">
                             <div class="forgot_icon" title="Forgot Password">?</div>
@@ -150,7 +148,7 @@
                         </div>
                         <input id="pass_input_reg" class="input_field reg pass_reg" type="password" placeholder="Password" title="Password">
                         <div class="pass show" id="pass_reg">
-                            <img class="show_icon pass_reg" src="images/hide_icon.png"/>
+                            <img class="show_icon pass_reg" src="images/hide_icon.png" title="Show Password"/>
                         </div>
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
