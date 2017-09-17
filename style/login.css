@@ -1,0 +1,510 @@
+/* look up legal shit for using fonts if this ever
+   goes public */
+
+@font-face{
+	font-family: FiraSans-Regular;
+	src: url("fonts/FiraSans-Regular.ttf");
+}
+
+@font-face{
+	font-family: NexaRust;
+    src: url("fonts/NexaRustScriptL-0.otf");
+}
+
+@font-face{
+	font-family: Quicksand;
+    src: url("fonts/Quicksand-Regular.otf");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+input[type="button"]{
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+}
+
+#containers_wrapper{
+    width: 100%;
+    height: 100%;
+    background: #0c77c9;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+#content_container{
+    width: 550px;
+    height: 100%;
+    background: ;
+    display: flex;
+    /* align-items: center; */
+}
+
+.side_shields{
+    width: inherit;
+    height: 100%;
+    position: fixed;	/* stops reg/login screen being shown on the other screen */
+    background: #0c77c9;
+    z-index: 10;
+}
+
+.side_shields.left{
+    margin-left: -550px;
+}
+
+.side_shields.right{
+    margin-left: 550px;
+}
+
+.form_container{
+    width: inherit;
+    height: auto;
+    position: absolute;
+    /* background: #fff; */
+    background: #0c77c9;
+    transition: height 0s .7s, margin-top 0s, .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container.login.hidden{
+    margin-left: -550px;
+}
+
+.form_container.register.hidden{
+    margin-left: 550px;
+}
+
+.title{
+    width: calc(100% - 30px);
+    height: auto;
+    background: ;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: NexaRust;
+    font-size: 80px;
+    color: #fff;
+}
+
+.title.register{
+    margin-bottom: 0;
+}
+
+#error_container{
+    width: calc(100% - 30px);
+    height: auto;
+    background: #d14841;
+    color: #fff;
+    margin-bottom: 15px;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    resize: vertical;
+    transition: .2s;
+}
+
+#error_container.hidden{
+    height: 0;
+    font-size: 0;
+}
+
+#error_container p{
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+#error_container_bottom{
+    width: 100%;
+    height: 10px;
+    background: #b8312f;
+}
+
+.input_container{
+    width: 520px;
+    height: 50px;
+    background: none;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.input_container.end{
+    margin-bottom: 0;
+}
+
+.input_field{
+    width: calc(100% - 20px);
+    height: 100%;
+    border: 0;
+    outline: 0;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* background: #d7d7d7; */
+    background: #fff;
+    transition: width .5s;
+}
+
+.input_field::placeholder{
+    color: #000;
+}
+
+.email{
+    height: 100%;
+    background: blue;
+}
+
+.email.input{
+    width: calc(100% - 55px );
+    display: flex;
+    flex-direction: row;
+}
+
+.email.forgot{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:#d7d7d7; */
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    cursor: pointer;
+}
+
+.pass{
+    height: 100%;
+    background: blue;
+}
+
+.pass.input{
+    width: calc(100% - 55px - 55px);
+	background-color: #fff;
+}
+
+.pass.show{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:#d7d7d7; */
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    cursor: pointer;
+}
+
+.pass.forgot{
+    width: 40px;
+    /* background: #d7d7d7; */
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 5px;
+}
+
+.forgot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot_icon{
+    width: 30px;
+    height: 30px;
+    /* background: #959c9e;
+    color: #d7d7d7; */
+    background: #000;
+    color: #fff;
+    font-family: FiraSans-Regular;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.forgot_icon::selection{
+    background: none;
+    color: none;
+}
+
+.forgot_icon::-moz-selection{
+    background: none;
+    color: none;
+}
+
+.show_icon{
+    width: 35px;
+    height: 23px;
+}
+
+
+.show_icon::selection{
+    background: none;
+    color: none;
+}
+
+.show_icon::-moz-selection{
+    background: none;
+    color: none;
+}
+
+#login_butn{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-family: FiraSans-Regular;
+    font-size: 20px;
+    color: #fff;
+}
+
+/*#login_butn_text{
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    color: #fff;
+}*/
+
+#register_butn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    color: #fff;
+    background: #0c77c9;
+    border: 2px solid #fff;
+    border-radius: 100px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+#register_butn:hover{
+    background: #fff;
+    color: #0c77c9;
+}
+
+#login_return{
+    width: calc(100% - 30px);
+    height: auto;
+    background: ;
+    margin-bottom: 15px;;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#first_name_input{
+    width: calc(100% - 20px - 50px);
+}
+
+#first_name_input.extended, #surname_input.extended, #email_input_reg.extended, #pass_repeat_input.extended{
+    width: calc(100% - 20px - 50px - 40px);
+}
+
+#pass_input_reg.extended{
+    width: calc(100% - 20px - 49.86px - 40px - 59.89px);
+}
+
+
+#pass_input_reg{
+    width: calc(100% - 30px - 55px - 45px);
+}
+
+.input_field.reg{
+    width: calc(100% - 20px - 50px);
+}
+
+.extended{
+    width: calc(100% - 20px - 50px - 40px);
+}
+
+#pass_req_container{
+    width: calc(100% - 30px);
+    height: auto;
+    background: #d3d3d3;
+    color: #424949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pass_req_title{
+    width: calc(100% - 20px);
+    height: auto;
+    background: #3b5999;
+    color: #fff;
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#pass_req_text{
+    width: calc(100% - 20px);
+    font-family: FiraSans-Regular;
+    padding: 10px;
+}
+
+.pass_req_item{
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.required_icon{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    font-size: 50px;
+    font-family: Quicksand;
+}
+
+.star{
+    margin-top: 18px;
+}
+
+.valid_symbol{
+    width: 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    font-family: FiraSans-Regular;
+    transition: width .5s, background .5s;
+}
+
+.valid_symbol.hidden{
+    width: 0;
+}
+
+.valid_symbol.valid{
+    background: #27ae61;
+}
+
+.valid_symbol.invalid{
+    background: #c1392d;
+}
+
+.tick, .cross{
+    transition: .2s;
+    transition-delay: .2s;
+}
+
+.tick.hidden, .cross.hidden{
+    font-size: 0;
+}
+
+#reg_continue_butn{
+    background: #000;
+    color: #fff;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	margin-bottom: 0;
+}
+
+#reg_error_box{
+    width: calc(100% - 30px);
+    height: auto;
+    background: #e13d46;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    transition: .2s;
+}
+
+#reg_error_box.hidden{
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.reg_error_item_container{
+    width: calc(100% - 30px);
+    height: auto;
+    padding: 1px; /* space between items */
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    transition: .2s;
+}
+
+.reg_error_item_container.hidden{
+    width: 0;
+    font-size: 0;
+}
+
+.reg_err_item_dash{
+    width: 15px;
+    height: 100%;
+    padding-right: 5px;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reg_err_item{
+    width: 470px;
+    height: 100%;
+    background: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#reg_error_bar{
+    width: calc(100% - 10px);
+    height: auto;
+    padding: 5px;
+    background: #b8312f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    transition: .2s;
+    margin-top: 15px;
+}

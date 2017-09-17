@@ -1,3 +1,11 @@
+<?php
+require_once("core/init.php");
+$USER = new User();
+if($USER->logged_in()){
+    header('Location: /');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,7 +49,7 @@
             <div id="content_container">
                 <div class="side_shields left"></div>
                 <div class="side_shields right"></div>
-                <div class="form_container login hidden">
+                <div class="form_container login">
                     <div class="title">Login</div>
                      <div id="error_container" class="hidden">
                         <p>Invalid Details</p>
@@ -49,7 +57,7 @@
                     </div>
                     <div class="input_container">
                         <div class="email input">
-                            <input class="input_field" type="email" placeholder="Email Address" title="Email Address">
+                            <input id="email_input" class="input_field" type="email" placeholder="Email Address" title="Email Address">
                         </div>
                         <div class="email forgot">
                             <div class="forgot_icon" title="Forgot Email">?</div>
@@ -66,14 +74,14 @@
                             <div class="forgot_icon" title="Forgot Password">?</div>
                         </div>
                     </div>
-                    <div id="login_butn" class="input_container">
+                    <button id="login_butn" class="input_container">
                         <div id="login_butn_text">Login</div>
-                    </div>
+                    </button>
                     <div id="register_butn" class="input_container end">
                         Sign-up
                     </div>
                 </div>
-                <div class="form_container register">
+                <div class="form_container register hidden">
                     <div class="title register">Sign up</div>
                     <div id="login_return">Already have an account?</div>
                     <div id="reg_error_box" class="hidden">
