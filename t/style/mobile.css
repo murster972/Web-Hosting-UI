@@ -1,0 +1,26 @@
+@media screen and (max-width: 550px){
+    .side_shields{
+        width: 0px;
+    }
+
+    #content_container{
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .form_container.login.hidden{
+        margin-left: -100%;
+    }
+
+    .form_container.register.hidden{
+        margin-left: 100%;
+    }
+
+    .input_container{
+        width: calc(100% - 30px);
+    }
+
+    #reg_continue_butn{
+        margin-bottom: 15px;
+    }
+}

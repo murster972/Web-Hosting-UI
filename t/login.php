@@ -13,7 +13,7 @@ if($USER->logged_in()){
         <title>Login or Sign-up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
-        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/login.css">
         <link rel="stylesheet" href="style/mobile.css">
         <script defer type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
         <script defer type="text/javascript" src="scripts/main.js"></script>
@@ -29,9 +29,9 @@ if($USER->logged_in()){
 
                 $(".side_shields").height("100%");
                 $(".form_container.login").css("margin-top", (hw - h2) / 2 + "px");
+                console.log(h2);
 
                 if(h1 <= hw){
-                    console.log(h1, hw)
                     $(".form_container.register").css("margin-top", (hw - h1) / 2 - 10 + "px");
                     $("#reg_continue_butn").css("margin-bottom", "0px");
                 }
@@ -43,30 +43,24 @@ if($USER->logged_in()){
 		</script>
     </head>
     <body>
-        <!-- TODO: Fix issues transitions when windows resized and create a no JS version -->
-
          <div id="containers_wrapper">
             <div id="content_container">
                 <div class="side_shields left"></div>
                 <div class="side_shields right"></div>
-                <div class="form_container login">
+                <div class="form_container login ">
                     <div class="title">Login</div>
                      <div id="error_container" class="hidden">
                         <p>Invalid Details</p>
                         <div id="error_container_bottom"></div>
                     </div>
                     <div class="input_container">
-                        <div class="email input">
-                            <input id="email_input" class="input_field" type="email" placeholder="Email Address" title="Email Address">
-                        </div>
+                        <input class="input_field" id="input" type="email input" placeholder="Email Address" title="Email Address" name="email_login">
                         <div class="email forgot">
                             <div class="forgot_icon" title="Forgot Email">?</div>
                         </div>
                     </div>
                     <div class="input_container">
-                        <div class="pass input">
-                            <input id="pass_input" class="input_field pass_login" type="password" placeholder="Password" title="Password">
-                        </div>
+                        <input id="pass_input" class="input_field pass_login pass input" type="password" placeholder="Password" title="Password" name="pass_login">
                         <div class="pass show" id="pass_login">
                             <img class="show_icon pass_login" src="images/hide_icon.png" title="Show Password"/>
                         </div>
@@ -74,23 +68,13 @@ if($USER->logged_in()){
                             <div class="forgot_icon" title="Forgot Password">?</div>
                         </div>
                     </div>
-                    <button id="login_butn" class="input_container">
-                        <div id="login_butn_text">Login</div>
-                    </button>
-                    <div id="register_butn" class="input_container end">
-                        Sign-up
-                    </div>
+                    <input type="button" class="input_container" id="login_butn" value="Login">
+                    <div id="register_butn" class="input_container end">Sign-up</div>
                 </div>
                 <div class="form_container register hidden">
                     <div class="title register">Sign up</div>
                     <div id="login_return">Already have an account?</div>
                     <div id="reg_error_box" class="hidden">
-                            <!-- change so "-" and error are different divs, i.e
-                                <div id=container(will keep all '-' in line)
-                                    <div dash></div>
-                                    <div error_txt></div>
-                                </div>
-                            -->
                         <div id="blank" class="reg_error_item_container hidden">
                             <div class="reg_err_item_dash">-</div>
                             <div class="reg_err_item">Fields with (*) are required</div>
@@ -112,11 +96,6 @@ if($USER->logged_in()){
                             <div class="reg_err_item">Passwords must match</div>
                         </div>
 
-                            <!-- <div class="errs " id="blank">- Fields with (*) are required</div>
-                            <div class="errs " id="name">- First name and surname can only contain: a-z, A-Z</div>
-                            <div class="errs " id="email">- Email address must have valid syntax</div>
-                            <div class="errs " id="pass">- Password must be 8 or more characters</div>
-                            <div class="errs " id="passr">- Passwords must match</div> -->
                         <div id="reg_error_bar" class=""></div>
                     </div>
                     <div class="input_container">
@@ -165,11 +144,10 @@ if($USER->logged_in()){
                             <span class="tick hidden pass_repeat_input">✓</span>
                             <span class="cross hidden pass_repeat_input">x</span>
                         </div>
-                        <!-- add box saying "Passwords dont match" error -->
                         <input id="pass_repeat_input" class="input_field reg pass_reg" type="password" placeholder="Password Repeat" title="Password Repeat">
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
-                    <div class="input_container" id="reg_continue_butn">Continue</div>
+                    <input type="button" class="input_container" id="reg_continue_butn" value="Continue">
                 </div>
             </div>
         </div>

@@ -45,6 +45,7 @@ $('#login_butn').click(function(){
         }else{
             $('#error_container').removeClass("hidden");
             resize();
+            console.log("test");
         }
     })
     return false

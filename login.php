@@ -46,20 +46,20 @@ if($USER->logged_in()){
             <div id="content_container">
                 <div class="side_shields left"></div>
                 <div class="side_shields right"></div>
-                <div class="form_container login hidden">
+                <div class="form_container login ">
                     <div class="title">Login</div>
                      <div id="error_container" class="hidden">
                         <p>Invalid Details</p>
                         <div id="error_container_bottom"></div>
                     </div>
                     <div class="input_container">
-                        <input class="input_field" id="input" type="email input" placeholder="Email Address" title="Email Address">
+                        <input class="input_field" id="input" type="email input" placeholder="Email Address" title="Email Address" name="email_login">
                         <div class="email forgot">
                             <div class="forgot_icon" title="Forgot Email">?</div>
                         </div>
                     </div>
                     <div class="input_container">
-                        <input id="pass_input" class="input_field pass_login pass input" type="password" placeholder="Password" title="Password">
+                        <input id="pass_input" class="input_field pass_login pass input" type="password" placeholder="Password" title="Password" name="pass_login">
                         <div class="pass show" id="pass_login">
                             <img class="show_icon pass_login" src="images/hide_icon.png" title="Show Password"/>
                         </div>
@@ -67,19 +67,13 @@ if($USER->logged_in()){
                             <div class="forgot_icon" title="Forgot Password">?</div>
                         </div>
                     </div>
-                    <input type="submit" class="input_container" id="login_butn" value="Login">
+                    <input type="button" class="input_container" id="login_butn" value="Login">
                     <div id="register_butn" class="input_container end">Sign-up</div>
                 </div>
-                <div class="form_container register">
+                <div class="form_container register hidden">
                     <div class="title register">Sign up</div>
                     <div id="login_return">Already have an account?</div>
                     <div id="reg_error_box" class="hidden">
-                            <!-- change so "-" and error are different divs, i.e
-                                <div id=container(will keep all '-' in line)
-                                    <div dash></div>
-                                    <div error_txt></div>
-                                </div>
-                            -->
                         <div id="blank" class="reg_error_item_container hidden">
                             <div class="reg_err_item_dash">-</div>
                             <div class="reg_err_item">Fields with (*) are required</div>
@@ -101,11 +95,6 @@ if($USER->logged_in()){
                             <div class="reg_err_item">Passwords must match</div>
                         </div>
 
-                            <!-- <div class="errs " id="blank">- Fields with (*) are required</div>
-                            <div class="errs " id="name">- First name and surname can only contain: a-z, A-Z</div>
-                            <div class="errs " id="email">- Email address must have valid syntax</div>
-                            <div class="errs " id="pass">- Password must be 8 or more characters</div>
-                            <div class="errs " id="passr">- Passwords must match</div> -->
                         <div id="reg_error_bar" class=""></div>
                     </div>
                     <div class="input_container">
@@ -154,11 +143,10 @@ if($USER->logged_in()){
                             <span class="tick hidden pass_repeat_input">✓</span>
                             <span class="cross hidden pass_repeat_input">x</span>
                         </div>
-                        <!-- add box saying "Passwords dont match" error -->
                         <input id="pass_repeat_input" class="input_field reg pass_reg" type="password" placeholder="Password Repeat" title="Password Repeat">
                         <div class="required_icon"><div class="star">*</div></div>
                     </div>
-                    <input type="submit" class="input_container" id="reg_continue_butn" value="Continue">
+                    <input type="button" class="input_container" id="reg_continue_butn" value="Continue">
                 </div>
             </div>
         </div>
