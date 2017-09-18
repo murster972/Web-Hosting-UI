@@ -1,12 +1,4 @@
 $(document).ready(function(){
-    $(".pass.show").on("click touch", function(){
-        var id = $(this).attr("id");
-            t = $("." + id).attr("type");
-
-        $("." + id).attr("type", t == "password" ? "text" : "password");
-        $(".show_icon." + id).attr("src", "images/" + (t == "password" ? "show" : "hide") + "_icon.png");
-    })
-
     $("#register_butn").on("click touchstart", function(){
         $(".form_container.login").addClass("hidden");
         $(".form_container.register").removeClass("hidden").trigger("regScreenShown");
@@ -37,15 +29,15 @@ $(document).ready(function(){
 $('#login_butn').click(function(){
     var email = $("#email_input").val();
     var password = $("#pass_input").val();
-    $.post("ajax/userManagement.php", {"action":"login","email":email,"password":password}, function(data){
-        extractedData = JSON.parse(data)
-        loginResult = extractedData.result
-        if(loginResult=="Success"){
-            window.location.href = "/";
-        }else{
-            $('#error_container').removeClass("hidden");
-            resize();
-        }
-    })
-    return false
+    // $.post("ajax/userManagement.php", {"action":"login","email":email,"password":password}, function(data){
+    //     extractedData = JSON.parse(data)
+    //     loginResult = extractedData.result
+    //     if(loginResult=="Success"){
+    //         window.location.href = "/";
+    //     }else{
+    //         $('#error_container').removeClass("hidden");
+    //         resize();
+    //     }
+    // })
+    // return false
 })

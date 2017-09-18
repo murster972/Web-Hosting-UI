@@ -1,0 +1,21 @@
+#content_container{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#email{
+    margin-bottom: 15px;
+    transition: 0s;
+}
+
+#submit_email{
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

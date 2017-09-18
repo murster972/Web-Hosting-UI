@@ -1,0 +1,58 @@
+#content_container{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pass_repeat_input{
+    margin-bottom: 15px;
+    transition: 0s;
+}
+
+#reset_pass{
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+#pass_req_container{
+    width: calc(100%);
+    height: auto;
+    background: #d3d3d3;
+    color: #424949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pass_req_title{
+    width: calc(100% - 20px);
+    height: auto;
+    background: #3b5999;
+    color: #fff;
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#pass_req_text{
+    width: calc(100% - 20px);
+    font-family: FiraSans-Regular;
+    padding: 10px;
+}
+
+.pass_req_item{
+    padding: 5px;
+    margin-left: 20px;
+}
+
+#pass_login{
+    padding-right: 20px;
+}

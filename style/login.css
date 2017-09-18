@@ -38,18 +38,6 @@
     margin-left: 550px;
 }
 
-.title{
-    width: calc(100% - 30px);
-    height: auto;
-    background: ;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: NexaRust;
-    font-size: 80px;
-    color: #fff;
-}
 
 .title.register{
     margin-bottom: 0;
@@ -88,6 +76,10 @@
 }
 
 .input_container{
+    width: calc(100% - 30px);
+}
+
+/*.input_container{
     width: 520px;
     height: 50px;
     background: none;
@@ -117,7 +109,7 @@
 
 .input_field::placeholder{
     color: #000;
-}
+}*/
 
 .email{
     height: 100%;

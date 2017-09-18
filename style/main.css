@@ -46,7 +46,78 @@ input[type="button"]{
     height: 100%;
     background: ;
     display: flex;
-    /* align-items: center; */
+}
+
+/* input fields */
+.input_container{
+    width: calc(100%);
+    height: 50px;
+    background: #fff;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.input_field{
+    width: calc(100% - 20px);
+    height: 50px;
+    border: 0;
+    outline: 0;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* background: #d7d7d7; */
+    background: #fff;
+    transition: width .5s;
+}
+
+.input_field::placeholder{
+    color: #000;
+}
+
+/* title */
+.title{
+    width: calc(100% - 30px);
+    height: auto;
+    background: ;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: NexaRust;
+    font-size: 80px;
+    color: #fff;
+}
+
+/* show icon */
+.pass.show{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:#d7d7d7; */
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
+    cursor: pointer;
+}
+
+.show_icon{
+    width: 35px;
+    height: 23px;
+}
+
+.show_icon::selection{
+    background: none;
+    color: none;
+}
+
+.show_icon::-moz-selection{
+    background: none;
+    color: none;
 }
 
 /* css for menu */

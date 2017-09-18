@@ -1,0 +1,9 @@
+@media screen and (max-width: 550px){
+    #pass_req_container{
+        width: calc(100% - 30px);
+    }
+
+    #pass_repeat_input{
+        width: calc(100% - 50px);
+    }
+}
