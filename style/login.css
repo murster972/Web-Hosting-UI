@@ -1,23 +1,6 @@
 /* look up legal shit for using fonts if this ever
    goes public */
 
-#containers_wrapper{
-    width: 100%;
-    height: 100%;
-    background: #0c77c9;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-}
-
-#content_container{
-    width: 550px;
-    height: 100%;
-    background: ;
-    display: flex;
-    /* align-items: center; */
-}
-
 .side_shields{
     width: inherit;
     height: 100%;

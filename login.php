@@ -14,6 +14,7 @@ if($USER->logged_in()){
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <link rel="stylesheet" href="style/login.css">
+        <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/mobile.css">
         <script defer type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
         <script defer type="text/javascript" src="scripts/main.js"></script>
