@@ -54,9 +54,9 @@ a, a:visited, a:active: a:hover, a:link{
 }
 
 #content_container{
-    width: 530px;
+    width: 550px;
     height: 100%;
-    background: red;
+    background: ;
     display: flex;
 }
 

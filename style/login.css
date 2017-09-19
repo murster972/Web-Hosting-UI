@@ -10,11 +10,11 @@
 }
 
 .side_shields.left{
-    margin-left: -530px;
+    margin-left: -550px;
 }
 
 .side_shields.right{
-    margin-left: 530px;
+    margin-left: 550px;
 }
 
 .form_container{
@@ -31,11 +31,11 @@
 }
 
 .form_container.login.hidden{
-    margin-left: -530px;
+    margin-left: -550px;
 }
 
 .form_container.register.hidden{
-    margin-left: 530px;
+    margin-left: 550px;
 }
 
 
@@ -44,7 +44,7 @@
 }
 
 #error_container{
-    width: 100%;
+    width: calc(100% - 30px);
     height: auto;
     background: #d14841;
     color: #fff;
@@ -76,7 +76,7 @@
 }
 
 .input_container{
-    width: 100%;
+    width: calc(100% - 30px);
 }
 
 /*.input_container{
@@ -117,7 +117,7 @@
 }
 
 #email_input{
-    width: calc(100% - 20px);
+    width: calc(100% - 50px);
     margin-bottom: 15px;
 }
 
@@ -232,7 +232,6 @@
 }*/
 
 #register_butn{
-    width: calc(100% - 4px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -291,7 +290,7 @@
 }
 
 #pass_req_container{
-    width: 100%;
+    width: calc(100% - 30px);
     height: auto;
     background: #d3d3d3;
     color: #424949;
