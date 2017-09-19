@@ -102,7 +102,7 @@
     padding: 10px;
     padding-top: 0;
     padding-bottom: 0;
-    /* background: #d7d7d7; */
+    /* background: #d7d7d7;
     background: #fff;
     transition: width .5s;
 }
@@ -117,7 +117,6 @@
 }
 
 .email.input{
-    width: calc(100% - 55px );
     display: flex;
     flex-direction: row;
 }

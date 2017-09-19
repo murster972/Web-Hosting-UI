@@ -1,12 +1,23 @@
 $(document).ready(function(){
     $("#register_butn").on("click touchstart", function(){
         $(".form_container.login").addClass("hidden");
-        $(".form_container.register").removeClass("hidden").trigger("regScreenShown");
+
+        //resets register form height
+        $(".form_container.register").css("transition", "margin-left .5s")
+        $(".form_container.register").height("auto");
+        $(".form_container.register").trigger("regScreenShown").removeClass("hidden");
     });
 
     $("#login_return").on("click touchstart", function(){
         $(".form_container.login").removeClass("hidden");
+
+        //stops scroll bar being shown on login screen
+        $(".form_container.register").css("transition", "height 0s .5s, margin-top 0s .5s, margin-left .5s")
+        $(".form_container.register").height($(".form_container.register").height());
+        $(".form_container.register").height("100%");
+
         $(".form_container.register").addClass("hidden").trigger("regScreenShown");;
+        $(".form_container.register").css("margin-top", 0);
     });
 
 

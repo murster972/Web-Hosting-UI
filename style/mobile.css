@@ -1,9 +1,0 @@
-@media screen and (max-width: 550px){
-    #content_container{
-        width: 100%;
-    }
-
-    .input_container{
-        width: calc(100% - 30px);
-    }
-}

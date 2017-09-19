@@ -55,9 +55,7 @@ if($USER->logged_in()){
                     </div>
                     <div class="input_container">
                         <input class="input_field" id="input" type="email input" placeholder="Email Address" title="Email Address" name="email_login">
-                        <div class="email forgot">
-                            <div class="forgot_icon" title="Forgot Email">?</div>
-                        </div>
+                        
                     </div>
                     <div class="input_container">
                         <input id="pass_input" class="input_field pass_login pass input" type="password" placeholder="Password" title="Password" name="pass_login">
