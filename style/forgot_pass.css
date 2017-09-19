@@ -1,7 +1,42 @@
 #content_container{
+    width: 530px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#text_container{
+    width: 100%;
+    height: auto;
+    background: #3b5999;
+}
+
+#text_container h2, #text_container p{
+    font-family: FiraSans-Regular;
+    color: #fff;
+}
+
+#text_container h2{
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+    font-size: 60px;
+    font-family: NexaRust;
+}
+
+#text_container p{
+    width: calc(100% - 30px);
+    font-size: 10px;
+    padding: 15px;
+    font-size: 15px;
+    background: #d3d3d3;
+    color: #424949;
+}
+
+#bottom_bar{
+    width: 100%;
+    height: 10px;
+    background: #28324e;
 }
 
 #email{
@@ -12,10 +47,10 @@
 #submit_email{
     font-family: FiraSans-Regular;
     font-size: 18px;
-    background: #000;
     color: #fff;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #000;
 }

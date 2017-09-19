@@ -15,6 +15,18 @@
         margin-left: 100%;
     }
 
+    #email_input{
+        width: calc(100% - 50px);
+    }
+
+    #register_butn{
+        width: calc(100% - 34px);
+    }
+
+    #error_container, #pass_req_container{
+        width: calc(100% - 30px);
+    }
+
     #reg_continue_butn{
         margin-bottom: 15px;
     }

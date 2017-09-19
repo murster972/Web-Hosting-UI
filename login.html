@@ -43,24 +43,21 @@
                 <div class="side_shields right"></div>
                 <div class="form_container login ">
                     <div class="title">Login</div>
-                     <div id="error_container" class="hidden">
+                     <div id="error_container" class="">
                         <p>Invalid Details</p>
                         <div id="error_container_bottom"></div>
                     </div>
-                    <div class="input_container">
-                        <input class="input_field" id="input" type="email input" placeholder="Email Address" title="Email Address" name="email_login">
-                        <!-- <div class="email forgot">
-                            <div class="forgot_icon" title="Forgot Email">?</div>
-                        </div> -->
-                    </div>
+                    <input class="input_field" id="email_input" type="email" placeholder="Email Address" title="Email Address" name="email_login">
                     <div class="input_container">
                         <input id="pass_input" class="input_field pass_login pass input" type="password" placeholder="Password" title="Password" name="pass_login">
                         <div class="pass show" id="pass_login">
                             <img class="show_icon pass_login" src="images/hide_icon.png" title="Show Password"/>
                         </div>
-                        <div class="pass forgot">
-                            <div class="forgot_icon" title="Forgot Password">?</div>
-                        </div>
+                        <a href="forgot_pass.html">
+                            <div class="pass forgot">
+                                <div class="forgot_icon" title="Forgot Password">?</div>
+                            </div>
+                        </a>
                     </div>
                     <input type="button" class="input_container" id="login_butn" value="Login">
                     <div id="register_butn" class="input_container end">Sign-up</div>

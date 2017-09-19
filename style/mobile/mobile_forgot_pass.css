@@ -2,4 +2,8 @@
     #email{
         width: calc(100% - 50px);
     }
+
+    #text_container{
+        width: calc(100% - 30px);
+    }
 }
