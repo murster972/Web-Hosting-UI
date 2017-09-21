@@ -56,3 +56,44 @@
 #pass_login{
     padding-right: 20px;
 }
+
+#pass_input{
+    width: calc(100% - 65.09px);
+}
+
+#pass_input.extended, #pass_repeat_input.extended{
+    width: calc(100% - 65.09px - 40px);
+}
+
+.valid_symbol{
+    width: 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    font-family: FiraSans-Regular;
+    transition: width .5s, background .5s;
+}
+
+.valid_symbol.hidden{
+    width: 0;
+}
+
+.valid_symbol.valid{
+    background: #27ae61;
+}
+
+.valid_symbol.invalid{
+    background: #c1392d;
+}
+
+.tick, .cross{
+    transition: .2s;
+    transition-delay: .2s;
+}
+
+.tick.hidden, .cross.hidden{
+    font-size: 0;
+}

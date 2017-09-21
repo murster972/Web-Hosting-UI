@@ -12,7 +12,15 @@
         <script defer type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
         <script defer type="text/javascript" src="scripts/main.js"></script>
         <script defer type="text/javascript" src="scripts/password.js"></script>
+        <script defer type="text/javascript" src="scripts/validation.js"></script>
     </head>
+    <script>
+        $(document).ready(function(){
+            var id = $(this).attr("id");
+            validateInput(id);
+            validateInput("pass_repeat_input");
+        })
+    </script>
     <body>
         <div id="containers_wrapper">
             <div id="content_container">
@@ -23,12 +31,22 @@
                     </div>
                 </div>
                 <div class="input_container">
-                    <input id="pass_input" class="input_field pass_login pass input" type="password" placeholder="Password" title="Password" name="pass_login">
+                    <div class="valid_symbol hidden">
+                        <span class="tick hidden">✓</span>
+                        <span class="cross hidden">x</span>
+                    </div>
+                    <input id="pass_input" class="input_field pass input" type="password" placeholder="Password" title="Password" name="pass_login">
                     <div class="pass show" id="pass_login">
                         <img class="show_icon pass_login" src="images/hide_icon.png" title="Show Password"/>
                     </div>
                 </div>
-                <input id="pass_repeat_input" class="input_field reg pass_reg" type="password" placeholder="Password Repeat" title="Password Repeat">
+                <div class="input_container">
+                    <div class="valid_symbol hidden">
+                        <span class="tick hidden">✓</span>
+                        <span class="cross hidden">x</span>
+                    </div>
+                    <input id="pass_repeat_input" class="input_field" type="password" placeholder="Password Repeat" title="Password Repeat">
+                </div>
                 <input class="input_container" id="reset_pass" type="button" value="Reset Password">
             </div>
         </div>

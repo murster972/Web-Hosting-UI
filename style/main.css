@@ -15,6 +15,11 @@
     src: url("fonts/Quicksand-Regular.otf");
 }
 
+@font-face{
+	font-family: Quicksand-Bold;
+    src: url("fonts/Quicksand-Bold.otf");
+}
+
 *{
     padding: 0;
     margin: 0;
