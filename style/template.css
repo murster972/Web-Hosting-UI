@@ -14,7 +14,6 @@
     background: #fff;
 }
 
-
 /* menu bar css starts here */
 #menu_bar{
     width: calc(100% - 20px);
@@ -96,7 +95,7 @@
     color: #0c77c9;
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 765px){
     #menu_bar{
         width: 100%;
         padding: 0;
@@ -127,6 +126,8 @@
         color: #0c77c9;
         width: 100%;
         margin-bottom: 0;
+        justify-content: center;
+        align-items: center;
     }
 
     .menu_item{

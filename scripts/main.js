@@ -1,4 +1,23 @@
 $(document).ready(function(){
+    // menu js
+    $(".menu_item").mouseenter(function(){
+        if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
+        $(".menu_item.active").css("border-color", "#0c77c9");
+    })
+    $(".menu_item").mouseleave(function(){
+        if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
+        $(".menu_item.active").css("border-color", "#fff");
+    })
+    $(".menu_item.active").hover(function(){
+        if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
+        $(".menu_item.active").css("border-color", "#fff");
+    })
+    $("#item_container").hover(function(){
+        if(window.innerWidth <= 750) $(".menu_item.active").css("border-color", "#0c77c9");
+        else $(".menu_item.active").css("border-color", "#fff");
+    })
+
+
     $("#register_butn").on("click touchstart", function(){
         $(".form_container.login").addClass("hidden");
 
