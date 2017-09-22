@@ -8,26 +8,30 @@
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/template.css">
         <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
-        <script type="text/javascript" src="scripts/main.js"></script>
         <script>
+            window.addEventListener("resize", resize, false);
+            window.addEventListener("load", resize, false);
+
             $(document).ready(function(){
-                $(".menu_item").mouseenter(function(){
-                    if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
-                    $(".menu_item.active").css("border-color", "#0c77c9");
-                })
-                $(".menu_item").mouseleave(function(){
-                    if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
-                    $(".menu_item.active").css("border-color", "#fff");
-                })
-                $(".menu_item.active").hover(function(){
-                    if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
-                    $(".menu_item.active").css("border-color", "#fff");
-                })
-                $("#item_container").hover(function(){
-                    if(window.innerWidth <= 750) $(".menu_item.active").css("border-color", "#0c77c9");
-                    else $(".menu_item.active").css("border-color", "#fff");
-                })
+                $(".menu_item.not_acc").mouseenter(function(){menuItemBorder(this, 0, "#0c77c9", "#fff")})
+                $(".menu_item.not_acc").mouseleave(function(){menuItemBorder(this, 1, "#fff", "#0c77c9")})
             })
+
+            function resize(){
+                w = window.innerWidth;
+                $(".menu_item").css("border-color", w <= 765 ? "#fff" : "#0c77c9");
+                $(".menu_item.active").css("border-color", w <= 765 ? "#0c77c9" : "#fff");
+            }
+
+            function menuItemBorder(t, l, c1, c2){
+                if(window.innerWidth <= 765) return -1;
+                if(l && $(t).hasClass("active"))
+                    $(t).css("border-color", "#fff");
+                else{
+                    $(".menu_item.active").css("border-color", c1);
+                    $(t).css("border-color", c2);
+                }
+            }
         </script>
     </head>
     <body>
@@ -35,12 +39,11 @@
         <div id="menu_bar">
             <div id="item_container">
                 <div id="drop_down_icon">Menu ⭣</div>
-                <div class="menu_item active">Home</div>
-                <div class="menu_item">Login</div>
-                <div class="menu_item">Services</div>
-                <div class="menu_item">Status</div>
-                <div class="menu_item last">Contact Us</div>
-                <div class="menu_item account_icon">Account</div>
+                <div class="menu_item not_acc">Home</div>
+                <div class="menu_item not_acc">Services</div>
+                <div class="menu_item not_acc active">Status</div>
+                <div class="menu_item not_acc last">Contact Us</div>
+                <div class="menu_item account_icon">Login</div>
                 <!-- <div class="menu_item"></div> -->
             </div>
         </div>

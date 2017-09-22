@@ -77,15 +77,13 @@
 
 .menu_item.account_icon{
     margin-left: auto;
-    padding: 0;
     border: 0;
+    padding: 0;
 }
 
 .account_icon{
     height: 40px;
     width: 150px;
-    border-radius: 0%;
-    border: 0;
     background: #fff;
     border-radius: 100px;
     display: flex;
