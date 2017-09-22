@@ -6,16 +6,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="style/mobile.css">
         <link rel="stylesheet" href="style/template.css">
-        <script defer type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
-        <script defer type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".menu_item").mouseenter(function(){
+                    if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
+                    $(".menu_item.active").css("border-color", "#0c77c9");
+                })
+                $(".menu_item").mouseleave(function(){
+                    if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
+                    $(".menu_item.active").css("border-color", "#fff");
+                })
+                $(".menu_item.active").hover(function(){
+                    if(window.innerWidth <= 750 || $(this).hasClass("account_icon")) return 0;
+                    $(".menu_item.active").css("border-color", "#fff");
+                })
+                $("#item_container").hover(function(){
+                    if(window.innerWidth <= 750) $(".menu_item.active").css("border-color", "#0c77c9");
+                    else $(".menu_item.active").css("border-color", "#fff");
+                })
+            })
+        </script>
     </head>
     <body>
         <!-- menu bar -->
         <div id="menu_bar">
             <div id="item_container">
-                <div id="drop_down_icon">🡣</div>
+                <div id="drop_down_icon">MENU</div>
                 <div class="menu_item active">Home</div>
                 <div class="menu_item">Login</div>
                 <div class="menu_item">Services</div>
