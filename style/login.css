@@ -1,6 +1,10 @@
 /* look up legal shit for using fonts if this ever
    goes public */
 
+ #menu_bar{
+     position: absolute;
+ }
+
 .side_shields{
     width: inherit;
     height: 100%;

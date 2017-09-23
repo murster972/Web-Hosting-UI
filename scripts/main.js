@@ -1,5 +1,8 @@
 $(document).ready(function(){
     $("#register_butn").on("click touchstart", function(){
+        $("#menu_bar").css("position", "fixed");
+
+
         $(".form_container.login").addClass("hidden");
 
         //resets register form height
@@ -12,6 +15,8 @@ $(document).ready(function(){
     });
 
     $("#login_return").on("click touchstart", function(){
+        $("#menu_bar").css("position", "absolute");
+
         $(".form_container.login").removeClass("hidden");
 
         //stops scroll bar being shown on login screen
