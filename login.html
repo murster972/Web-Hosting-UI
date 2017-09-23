@@ -4,34 +4,42 @@
         <meta charset="utf-8">
         <title>Login or Sign-up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
         <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/login.css">
         <link rel="stylesheet" href="style/mobile/mobile.css">
         <link rel="stylesheet" href="style/mobile/mobile_login.css">
-        <script defer type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
-        <script defer type="text/javascript" src="scripts/main.js"></script>
-        <script defer type="text/javascript" src="scripts/validation.js"></script>
-        <script defer type="text/javascript" src="scripts/password.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/validation.js"></script>
+        <script type="text/javascript" src="scripts/password.js"></script>
         <script type="text/javascript">
 			window.addEventListener("resize", resize, false);
 			window.addEventListener("load", resize, false);
 
+            window.onload
+
 			function resize(){
                 var h1 = $(".form_container.register").height() - 15;
-                    h2 = $(".form_container.login").height()
-                    hw = window.innerHeight;
+                    h2 = $(".form_container.login").height();
+                    hm = $("#menu_bar").height();
+                    hw = window.innerHeight - hm;
 
                 $(".side_shields").height("100%");
                 $(".form_container.login").css("margin-top", (hw - h2) / 2 + "px");
 
-                if(h1 <= hw){
-                    $(".form_container.register").css("margin-top", (hw - h1) / 2 - 10 + "px");
-                    $("#reg_continue_butn").css("margin-bottom", "0px");
-                }
-                else{
-                    $(".form_container.register").css("margin-top", "0px");
-                    $("#reg_continue_butn").css("margin-bottom", "15px");
+                //!$(".form_container.register").hasClass("hidden")
+                //stops scroll bar showing on login on page load
+                if(!$(".form_container.register").hasClass("hidden")){
+                    if(h1 < hw){
+                        $(".form_container.register").css("margin-top", (hw - h1) / 2 - 10 + 50 + "px");
+                        $("#reg_continue_butn").css("margin-bottom", "0px");
+                    }
+                    else{
+                        $(".form_container.register").css("margin-top", "60px");
+                        $("#reg_continue_butn").css("margin-bottom", "15px");
+                    }
                 }
 			}
 		</script>

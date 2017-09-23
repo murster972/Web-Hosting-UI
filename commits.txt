@@ -1,0 +1,4 @@
+23 Sept 2017
+14:22 - Fixed menu bug - items wrapped in achor tag where dissapearing in mobile mode - by
+        changing menu_items from <a><div></div></a> to just <a></a>
+      - added utf-8 charset so arrow on menu bar will show

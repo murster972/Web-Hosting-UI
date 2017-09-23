@@ -35,6 +35,7 @@
 }
 
 .form_container.register.hidden{
+    height: 0;
     margin-left: 550px;
 }
 

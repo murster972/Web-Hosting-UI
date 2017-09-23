@@ -6,6 +6,9 @@ $(document).ready(function(){
         $(".form_container.register").css("transition", "margin-left .5s")
         $(".form_container.register").height("auto");
         $(".form_container.register").trigger("regScreenShown").removeClass("hidden");
+
+        //centers register form after height reset
+        resize();
     });
 
     $("#login_return").on("click touchstart", function(){
@@ -34,7 +37,6 @@ $(document).ready(function(){
 
     //NOTE - just for testing, needs to be changed so form submitted on click
     $("#reg_continue_butn").click(function(){submitForm()});
-
 })
 
 $('#login_butn').click(function(){
