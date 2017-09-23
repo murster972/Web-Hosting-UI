@@ -38,15 +38,13 @@
         <!-- menu bar -->
         <div id="menu_bar">
             <div id="item_container">
-                <!--BUG: items dissapear when wrapped in anchor tags when in mobile mode -->
+                <!--NOTE: anchor instead of div as div disspears when wrapped in anchor in mobile mode -->
                 <div id="drop_down_icon">Menu ⭣</div>
-                <div class="menu_item not_acc">Home</div>
-                <div class="menu_item not_acc">Services</div>
-                <div class="menu_item not_acc active">Status</div>
-                <div class="menu_item not_acc last">Contact Us</div>
-                <a href="login.html" id="account_link">
-                    <div class="menu_item account_icon">Login</div>
-                </a>
+                <a class="menu_item not_acc">Home</a>
+                <a class="menu_item not_acc">Services</a>
+                <a class="menu_item not_acc active">Status</a>
+                <a class="menu_item not_acc last">Contact Us</a>
+                <a href="login.html" id="account_link" class="menu_item account_icon">Login</a>
                 <!-- <div class="menu_item"></div> -->
             </div>
         </div>
