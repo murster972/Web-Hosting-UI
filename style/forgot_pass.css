@@ -1,8 +1,56 @@
 #content_container{
     width: 530px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#sent_status_container{
+    width: 100%;
+    height: 64px;
+    margin-bottom: 15px;
+    transition: height .4s, font-size 0s .1s;
+    font-size: 20px;
+}
+
+#sent_status_container.hidden{
+    height: 0px;
+    font-size: 0;
+}
+
+#sent_status_container p{
+    font-family: FiraSans-Regular;
+    color: #fff;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    padding: 15px;
+}
+
+#sent_status_container.valid{
+    background-color: #2dcc70;
+}
+
+#sent_status_container.invalid{
+    background-color: #e84c3d;
+}
+
+#bottom_bar{
+    width: 100%;
+    height: 10px;
+    transition: height .2s .2s;
+}
+
+#bottom_bar.hidden{
+    height: 0;
+}
+
+#bottom_bar.valid{
+    background-color: #27ae61;
+}
+
+#bottom_bar.invalid{
+    background-color: #c1392d;
 }
 
 #text_container{
@@ -17,11 +65,11 @@
 }
 
 #text_container h2{
-    width: calc(100% - 20px);
-    padding: 10px;
+    width: calc(100% - 40px);
+    padding: 20px;
     text-align: center;
-    font-size: 60px;
-    font-family: NexaRust;
+    font-size: 30px;
+    font-family: Quicksand;
 }
 
 #text_container p{
@@ -33,13 +81,7 @@
     color: #424949;
 }
 
-#bottom_bar{
-    width: 100%;
-    height: 10px;
-    background: #28324e;
-}
-
-#email{
+#email_input{
     margin-bottom: 15px;
     transition: 0s;
 }

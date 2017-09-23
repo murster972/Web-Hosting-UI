@@ -9,20 +9,42 @@
         <link rel="stylesheet" href="style/forgot_pass.css">
         <link rel="stylesheet" href="style/mobile/mobile.css">
         <link rel="stylesheet" href="style/mobile/mobile_forgot_pass.css">
-        <script defer type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
-        <script defer type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#submit_email").click(function(){
+                    $("#sent_status_container").removeClass("hidden");
+                    $("#bottom_bar").removeClass("hidden");
+                })
+            })
+        </script>
     </head>
     <body>
+        <div id="menu_bar">
+            <div id="item_container">
+                <div id="drop_down_icon">Menu ⭣</div>
+                <div class="menu_item not_acc">Home</div>
+                <div class="menu_item not_acc">Services</div>
+                <div class="menu_item not_acc">Status</div>
+                <div class="menu_item not_acc last">Contact Us</div>
+                    <div class="menu_item account_icon">Login</div>
+                <!-- <div class="menu_item"></div> -->
+            </div>
+        </div>
         <div id="containers_wrapper">
             <div id="content_container">
+                <div id="sent_status_container" class="valid hidden">
+                    <p>Request Received!</p>
+                    <div id="bottom_bar" class="valid hidden"></div>
+                </div>
                 <div id="text_container">
-                    <h2>Reset Password</h2>
+                    <h2>Forgot Password</h2>
                     <p>
                         Please enter your email-address below and, if it's in our system, we'll send you a link to reset your password.
                     </p>
                     <!-- <div id="bottom_bar"></div> -->
                 </div>
-                <input class="input_field" id="email" type="email" placeholder="Email Address">
+                <input class="input_field" id="email_input" type="email" placeholder="Email Address">
                 <input class="input_container" id="submit_email" type="button" value="Reset Password">
             </div>
         </div>

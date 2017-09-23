@@ -59,7 +59,7 @@
     background: none;
     border: 1px solid #0c77c9;
     border-radius: 0px;
-    font-family: Quicksand;
+    font-family: Quicksand-Bold;
     color: #fff;
     cursor: pointer;
     transition: .5s;
@@ -75,7 +75,7 @@
     border-color: #fff;
 }
 
-.menu_item.account_icon{
+#item_container #account_link{
     margin-left: auto;
     border: 0;
     padding: 0;

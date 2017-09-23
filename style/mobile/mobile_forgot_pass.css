@@ -1,9 +1,14 @@
 @media screen and (max-width: 550px){
-    #email{
+    #content_container{
+        justify-content: flex-start;
+        margin-top: 60px;
+    }
+
+    #email_input{
         width: calc(100% - 50px);
     }
 
-    #text_container{
+    #text_container, #sent_status_container{
         width: calc(100% - 30px);
     }
 }
