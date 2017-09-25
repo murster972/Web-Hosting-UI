@@ -97,3 +97,84 @@
 .tick.hidden, .cross.hidden{
     font-size: 0;
 }
+
+
+#reg_continue_butn{
+    background: #000;
+    color: #fff;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	margin-bottom: 0;
+}
+
+#reg_error_box{
+    width: calc(100%);
+    height: auto;
+    background: #e13d46;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    transition: .2s;
+}
+
+#reg_error_box.hidden{
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.reg_error_item_container{
+    width: calc(100% - 30px);
+    height: auto;
+    padding: 1px; /* space between items */
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    font-family: FiraSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    transition: .2s;
+}
+
+.reg_error_item_container.hidden{
+    width: 0;
+    font-size: 0;
+}
+
+.reg_err_item_dash{
+    width: 15px;
+    height: 100%;
+    padding-right: 5px;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reg_err_item{
+    width: 470px;
+    height: 100%;
+    background: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#reg_error_bar{
+    width: calc(100% - 10px);
+    height: auto;
+    padding: 5px;
+    background: #b8312f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: FiraSans-Regular;
+    font-size: 20px;
+    transition: .2s;
+    margin-top: 15px;
+}

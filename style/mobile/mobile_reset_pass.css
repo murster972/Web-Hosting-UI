@@ -1,5 +1,5 @@
 @media screen and (max-width: 550px){
-    #pass_req_container{
+    #pass_req_container, #reg_error_box{
         width: calc(100% - 30px);
     }
 

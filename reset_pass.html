@@ -10,21 +10,65 @@
         <link rel="stylesheet" href="style/reset_pass.css">
         <link rel="stylesheet" href="style/mobile/mobile.css">
         <link rel="stylesheet" href="style/mobile/mobile_reset_pass.css">
-        <script defer type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
-        <script defer type="text/javascript" src="scripts/main.js"></script>
-        <script defer type="text/javascript" src="scripts/password.js"></script>
-        <script defer type="text/javascript" src="scripts/validation.js"></script>
+        <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="scripts/validation.js"></script>
+        <script type="text/javascript" src="scripts/password.js"></script>
     </head>
     <script>
         $(document).ready(function(){
-            var id = $(this).attr("id");
-            validateInput(id);
-            validateInput("pass_repeat_input");
+            $(".input_field").focusout(function(){
+                valid_pass($(this).attr("id"));
+            })
+
+            $("#reset_pass").click(function(){
+                errs = [];
+                if($(".tick.pass_input").hasClass("hidden")) errs.push("pass");
+                if($(".tick.pass_repeat_input").hasClass("hidden")) errs.push("passr");
+                valid_pass("pass_input");
+                valid_pass("pass_repeat_input");
+                show_reg_errors(errs);
+            });
         })
+
+        function valid_pass(id){
+            val = $("#" + id).val();
+
+            if(!val){
+                if(id == "pass_input")
+                    symbol(id, 0);
+                else if(!$(".valid_symbol.pass_input").hasClass("hidden"))
+                    symbol(id, 0);
+            }
+            else{
+                if(id == "pass_input") symbol(id, (val.length >= 8) ? 1 : 0);
+                else symbol(id, ($("#pass_input").val() == val) ? 1 : 0);
+            }
+        }
     </script>
     <body>
+        <div id="menu_bar">
+            <div id="item_container">
+                <div id="drop_down_icon">Menu ⭣</div>
+                <a class="menu_item not_acc">Home</a>
+                <a class="menu_item not_acc">Services</a>
+                <a class="menu_item not_acc">Status</a>
+                <a class="menu_item not_acc last">Contact Us</a>
+                <a href="login.html" id="account_link" class="menu_item account_icon">Login</a>
+            </div>
+        </div>
         <div id="containers_wrapper">
             <div id="content_container">
+                <div id="reg_error_box" class="hidden">
+                    <div id="pass" class="reg_error_item_container hidden">
+                        <div class="reg_err_item_dash">-</div>
+                        <div class="reg_err_item">Password must be 8 or more characters</div>
+                    </div>
+                    <div id="passr" class="reg_error_item_container hidden">
+                        <div class="reg_err_item_dash">-</div>
+                        <div class="reg_err_item">Passwords must match</div>
+                    </div>
+                    <div id="reg_error_bar" class=""></div>
+                </div>
                 <div id="pass_req_container">
                     <div id="pass_req_title">Password Requirments</div>
                     <div id="pass_req_text">
@@ -32,21 +76,21 @@
                     </div>
                 </div>
                 <div class="input_container">
-                    <div class="valid_symbol hidden">
-                        <span class="tick hidden">✓</span>
-                        <span class="cross hidden">x</span>
+                    <div class="valid_symbol pass_input hidden">
+                        <span class="tick pass_input hidden">✓</span>
+                        <span class="cross pass_input hidden">x</span>
                     </div>
-                    <input id="pass_input" class="input_field pass input" type="password" placeholder="Password" title="Password" name="pass_login">
+                    <input id="pass_input" class="input_field pass_input pass_login" type="password" placeholder="Password" title="Password" name="pass_login">
                     <div class="pass show" id="pass_login">
                         <img class="show_icon pass_login" src="images/hide_icon.png" title="Show Password"/>
                     </div>
                 </div>
                 <div class="input_container">
-                    <div class="valid_symbol hidden">
-                        <span class="tick hidden">✓</span>
-                        <span class="cross hidden">x</span>
+                    <div class="valid_symbol pass_repeat_input hidden">
+                        <span class="tick pass_repeat_input hidden">✓</span>
+                        <span class="cross pass_repeat_input hidden">x</span>
                     </div>
-                    <input id="pass_repeat_input" class="input_field" type="password" placeholder="Password Repeat" title="Password Repeat">
+                    <input id="pass_repeat_input" class="input_field pass_repeat_input pass_login" type="password" placeholder="Password Repeat" title="Password Repeat">
                 </div>
                 <input class="input_container" id="reset_pass" type="button" value="Reset Password">
             </div>
