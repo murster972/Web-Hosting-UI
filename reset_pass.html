@@ -18,6 +18,7 @@
         $(document).ready(function(){
             $(".input_field").focusout(function(){
                 valid_pass($(this).attr("id"));
+                valid_pass("pass_repeat_input");
             })
 
             $("#reset_pass").click(function(){
