@@ -138,7 +138,7 @@ a, a:visited, a:active: a:hover, a:link{
 }
 
 /* menu bar css starts here */
-#menu_bar{
+/*#menu_bar{
     width: calc(100% - 20px);
     padding: 10px;
     display: flex;
@@ -190,8 +190,6 @@ a, a:visited, a:active: a:hover, a:link{
 }
 
 .menu_item:hover{
-    /*background: #fff;
-    color: #0c77c9;*/
     border-color: #fff;
 }
 
@@ -287,6 +285,6 @@ a, a:visited, a:active: a:hover, a:link{
         background-color: #0c77c9;
         color: #fff;
     }
-}
+}*/
 
 /* menu bar css ends here */

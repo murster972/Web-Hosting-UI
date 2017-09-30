@@ -1,20 +1,15 @@
-/* test */
-#wrapper{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    padding-top: 150px;
-
-}
-
-#container{
-    width: 900px;
-    height: 1000px;
-    background: #fff;
-}
 
 /* menu bar css starts here */
+#menu_cloak{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: fixed;
+    z-index: 13;
+    margin-top: 46px;
+    transition: .5s;
+}
+
 #menu_bar{
     width: calc(100% - 20px);
     padding: 10px;
@@ -24,6 +19,7 @@
     flex-wrap: wrap;
     align-items: center;
     position: fixed;
+    z-index: 12;
     background: #0c77c9;
 }
 
@@ -96,17 +92,40 @@
 @media screen and (max-width: 765px){
     #menu_bar{
         width: 100%;
-        padding: 0;
+        height: 46px;
         background-color: #fff;
+        padding: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: height .5s;
     }
 
     #item_container{
         width: 100%;
+        height: 100%;
         padding: 0;
-        background-color: #fff;
+        background-color: inherit;
+        align-items: flex-start;
+        align-content: flex-start;
+        overflow: hidden;
     }
 
-    #item_container:hover > .menu_item{
+    .hidden_menu{
+        background-color: #0c77c9;
+        border-color: #0c77c9;
+        color: #0c77c9;
+    }
+
+    #item_mobile_center_container{
+        width: 100%;
+        /* 100% - drop_down_icon.height - account_icon.height */
+        height: calc(100% - 47px - 55px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*#item_container:hover > .menu_item{
         display: flex;
     }
 
@@ -116,12 +135,13 @@
 
     #item_container:hover{
         padding-bottom: 15px;
-    }
+    }*/
 
 
     #drop_down_icon{
         display: flex;
-        color: #0c77c9;
+        color: #fff;
+        background: #0c77c9;
         width: 100%;
         margin-bottom: 0;
         justify-content: center;
@@ -139,8 +159,11 @@
         border-color: #fff;
         color: #0c77c9;
         font-family: Quicksand-Bold;
-        display: none;
+        /*display: none;*/
+        display: flex;
         justify-content: center;
+        opacity: 0;
+        transition: opacity .5s .2s;
     }
 
     .menu_item.active{

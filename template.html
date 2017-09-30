@@ -16,10 +16,31 @@
             $(document).ready(function(){
                 $(".menu_item.not_acc").mouseenter(function(){menuItemBorder(this, 0, "#0c77c9", "#fff")})
                 $(".menu_item.not_acc").mouseleave(function(){menuItemBorder(this, 1, "#fff", "#0c77c9")})
+
+                $("#drop_down_icon").click(function(){
+                    if(window.innerWidth > 756) return "Not mobile.";
+                    if($("#item_container").height() == 46){
+                        $("#menu_bar").height("100%");
+                        $(".menu_item").css("opacity", "1");
+
+                        //TODO: have items opacity set to zero and then close menu on menu close
+                        //      i.e. the oppist sequence of menu opening
+
+                        // $("#menu_bar").css({"height": "100%", "transition": "height .5s .5s"});
+                        // $(".menu_item").css({"opacity": "1", "transition": "opacity .5s"});
+                    }
+                    else{
+                        $("#menu_bar").height("46px");
+                        $(".menu_item").css("opacity", "0");
+                    }
+                })
             })
 
             function resize(){
+                //TODO - keep menu fixed and try width
                 w = window.innerWidth;
+                if(w > 765) $(".menu_item").css("opacity", "1");
+                else $(".menu_item").css("opacity", "0");
                 $(".menu_item").css("border-color", w <= 765 ? "#fff" : "#0c77c9");
                 $(".menu_item.active").css("border-color", w <= 765 ? "#0c77c9" : "#fff");
             }
@@ -36,23 +57,23 @@
         </script>
     </head>
     <body>
+
+        <!--TODO: try mobile menu full-size, and find good transition -->
+
         <!-- menu bar -->
         <div id="menu_bar">
             <div id="item_container">
                 <!--NOTE: anchor instead of div as div disspears when wrapped in anchor in mobile mode -->
                 <div id="drop_down_icon">Menu ⭣</div>
-                <a class="menu_item not_acc">Home</a>
-                <a class="menu_item not_acc">Services</a>
-                <a class="menu_item not_acc active">Status</a>
-                <a class="menu_item not_acc last">Contact Us</a>
+                <div id="item_mobile_center_container">
+                    <a class="menu_item not_acc">Home</a>
+                    <a class="menu_item not_acc">Services</a>
+                    <a class="menu_item not_acc active">Status</a>
+                    <a class="menu_item not_acc last">Contact Us</a>
+                </div>
                 <a href="login.html" id="account_link" class="menu_item account_icon">Login</a>
                 <!-- <div class="menu_item"></div> -->
             </div>
         </div>
-        <!-- <div id="wrapper">
-            <div id="container">
-
-            </div>
-        </div> -->
     </body>
 </html>
