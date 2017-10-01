@@ -18,40 +18,41 @@
                 $(".menu_item.not_acc").mouseleave(function(){menuItemBorder(this, 1, "#fff", "#0c77c9")})
 
                 $("#drop_down_icon").click(function(){
-                    if(window.innerWidth > 756) return "Not mobile.";
-                    if($("#item_container").height() == 46){
-                        $("#menu_bar").height("100%");
-                        $(".menu_item").css("opacity", "1");
+                    if(window.innerWidth > 756) return "Not mobile";
 
-                        //TODO: have items opacity set to zero and then close menu on menu close
-                        //      i.e. the oppist sequence of menu opening
-
-                        // $("#menu_bar").css({"height": "100%", "transition": "height .5s .5s"});
-                        // $(".menu_item").css({"opacity": "1", "transition": "opacity .5s"});
-                    }
-                    else{
-                        $("#menu_bar").height("46px");
-                        $(".menu_item").css("opacity", "0");
-                    }
+                    if($("#item_container").height() == 46) menu(1);
+                    else menu(0);
                 })
             })
 
             function resize(){
                 //TODO - keep menu fixed and try width
                 w = window.innerWidth;
-                if(w > 765) $(".menu_item").css("opacity", "1");
-                else $(".menu_item").css("opacity", "0");
+                if(w > 765) menu(0);
                 $(".menu_item").css("border-color", w <= 765 ? "#fff" : "#0c77c9");
                 $(".menu_item.active").css("border-color", w <= 765 ? "#0c77c9" : "#fff");
             }
 
             function menuItemBorder(t, l, c1, c2){
-                if(window.innerWidth <= 765) return -1;
+                if(window.innerWidth <= 765) return "Mobile";
                 if(l && $(t).hasClass("active"))
                     $(t).css("border-color", "#fff");
                 else{
                     $(".menu_item.active").css("border-color", c1);
                     $(t).css("border-color", c2);
+                }
+            }
+
+            function menu(open){
+                if(open){
+                    $("#menu_bar").addClass("dropped");
+                    $(".menu_item").addClass("dropped");
+                    $("#drop_down_icon").addClass("dropped");
+                }
+                else{
+                    $("#menu_bar").removeClass("dropped");
+                    $(".menu_item").removeClass("dropped");
+                    $("#drop_down_icon").removeClass("dropped");
                 }
             }
         </script>
